@@ -18,6 +18,8 @@ html lang="#{I18n.locale}"
     = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
+    = content_for :style
+    = content_for :javascript
 
 
 
@@ -32,7 +34,7 @@ html lang="#{I18n.locale}"
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
               li= link_to "Rules", page_path("user_rules".freeze)
-              li= link_to "Link 2", "/path2"
+              li= link_to "FAQ",   faq_path
               li= link_to "Link 3", "/path3"
 
     .container

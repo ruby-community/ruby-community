@@ -1,0 +1,14 @@
+- content_for :javascript do
+  javascript:
+    $(function() {
+      var highlight = window.location.hash.substr(1)
+      if (highlight) {
+        $('li[data-name='+highlight+']').addClass('highlight')
+      }
+    })
+
+h1 FAQ
+
+ol
+  li data-name="float_cmp" Why is `0.1 + 0.2 == 0.3` false?
+  li data-name="equal_to_a_or_b" Why does `"b" == "a" || "b"` not return true?
