@@ -26,6 +26,11 @@ Resources
   * ruby-flow.com
   * rvm.io
   * zenspiders quickref
+  * ruby forum
+* Mailing lists
+  * ruby-talk
+  * ruby-core
+  * rubyonrails
 * Books
   * (ruby pro)
 * FAQ
