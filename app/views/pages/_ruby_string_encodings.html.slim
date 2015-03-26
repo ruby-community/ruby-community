@@ -1,0 +1,94 @@
+p TODO
+
+markdown:
+  Ruby and String encodings
+  =========================
+
+  ### Note
+
+  Unless stated otherwise, this article covers ruby version 2.1 and up.
+
+  ### Terminology
+
+  This may be a bit dry, but it's quite important to understand the terms used. I will go into details
+  about those terms later. So if you don't understand right away what it means - don't worry and just
+  read on.
+
+  #### Bit
+
+  A bit is the basic unit of information in computing and digital communications.
+  A bit can have only one of two values. These values are most commonly
+  represented as either a 0 or 1. The term bit is a portmanteau of binary digit.
+
+  #### Byte
+
+  A byte most commonly consists of eight bits. It is the smallest addressable unit
+  of memory in many computer architectures. Most sizes in computers are measured
+  in bytes, or multiples of bytes. For example, your computer might have 8 GiB
+  (gibibytes) of RAM. That means it has 8 * 1024 * 1024 * 1024 = 8,589,934,592
+  Bytes of Memory.
+  Since a byte consist of 8 bits, it can represent up to 256 different values
+  (2^8).
+
+  #### Character
+
+  The term "character" is often shortened to just "char". A character is what
+  humans use to read & write text. For example, "A" is a character from the latin
+  script. "π" (pi) is a character from the greek script.
+
+
+  ### Encoding
+
+  An encoding informs the computer and/or its programs, how bytes are mapped to
+  characters, and the other way round. For example, the ASCII encoding defines
+  128 mappings from characters to a single byte. In ASCII, the character "A" is
+  represented by a byte with the bits set to 01000001 (or 65, interpreted as
+  integer).
+
+  ### Evolution of encodings
+
+  At the beginning there were 
+  Given that a single byte only has 256 possible different values it can represent,
+  but there are thousands of characters (Unicode currently contains over 110,000
+  characters), it immediately becomes clear that a single encoding can't map all
+  characters to a single byte. So how do we do it then? There are two
+  strategies:
+
+  1. define multiple encodings, each mapping the available 256 values to a
+     different set of characters.
+  2. use more than a single byte to encode a single character.
+
+
+
+  ### What is a String?
+
+  In Ruby, a String consists of two informations: a byte array and an encoding name.
+  For example, take the String "hello". 
+
+
+  ### Older rubies
+
+  In ruby 1.8 and older, Strings do not have an encoding. Accordingly, almost no operation is encoding aware.
+  Notable exceptions: -K flag, Regexp flags n, j, u.
+
+  ruby 1.9 up started having String#encoding. String literals depended on environment and/or "magic comment".
+
+
+  ------------------
+  Keywords:
+  
+  * encoding comment
+  * source encoding
+  * input encoding
+  * output encoding
+  * bytes
+  * byte sequences
+  * characters
+  * representation
+  * String#force_encoding
+  * String#encode
+  * String#scrub
+  * IO.default_external=
+  * IO.default_internal=
+
+  ------------------

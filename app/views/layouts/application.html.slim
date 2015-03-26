@@ -18,8 +18,8 @@ html lang="#{I18n.locale}"
     = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
-    = content_for :style
-    = content_for :javascript
+    = yield :style
+    = yield :javascript
 
 
 
@@ -33,23 +33,25 @@ html lang="#{I18n.locale}"
           a.navbar-brand href="#"LearningRuby
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              li= link_to "Rules", page_path("user_rules".freeze)
-              li= link_to "FAQ",   faq_path
-              li= link_to "Links", page_path("links")
+              li= link_to "Rules",    page_path("user_rules".freeze)
+              li= link_to "FAQ",      faq_path
+              li= link_to "Links",    page_path("links")
+              li= link_to "Articles", page_path("articles")
 
     .container
       .row
-        .col-lg-9
-          = bootstrap_flash
-          = yield
-        .col-lg-3
-          .well.sidebar-nav
-            h3 Sidebar
-            ul.nav.nav-list
-              li.nav-header Sidebar
-              li= link_to "Link 1", "/path1"
-              li= link_to "Link 2", "/path2"
-              li= link_to "Link 3", "/path3"
+        - if content_for? :sidebar
+          .col-lg-9
+            = bootstrap_flash
+            = yield
+          .col-lg-3
+            .well.sidebar-nav
+              = yield :sidebar
+
+        - else
+          .col-lg-12
+            = bootstrap_flash
+            = yield
 
       footer
-        p &copy; Company 2015
+        p &copy; Ruby-Community 2015
