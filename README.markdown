@@ -61,10 +61,13 @@ This Code of Conduct is adapted from the [Contributor Covenant, version 1.0.0](h
 
 ### Contributors
 
+In alphabetical order:
+
 * [apeiros](https://github.com/apeiros)
 * [atmosx](https://github.com/atmosx)
-* [jheg](https://github.com/jheg)
 * [c-c](https://github.com/csmr)
-* [mikecmpbll](https://github.com/mikecmpbll)
+* [jhass](https://github.com/jhass)
+* [jheg](https://github.com/jheg)
 * [miah](https://github.com/miah)
+* [mikecmpbll](https://github.com/mikecmpbll)
 * [workmad3](https://github.com/workmad3)
