@@ -67,3 +67,4 @@ This Code of Conduct is adapted from the [Contributor Covenant, version 1.0.0](h
 * [c-c](https://github.com/csmr)
 * [mikecmpbll](https://github.com/mikecmpbll)
 * [miah](https://github.com/miah)
+* [workmad3](https://github.com/workmad3)
