@@ -1,0 +1,2 @@
+This siter ruby-community.com is the channel website for #ruby on freenode.net.
+It provides information regarding the channel, and supportive information for users of the channel.
