@@ -11,6 +11,7 @@ IRC
 * Bots
 * Staff/Ops
 * Bans with reasons
+* Karma
 
 
 Resources
@@ -34,6 +35,11 @@ Resources
 * Books
   * (ruby pro)
 * FAQ
+  * String
+    * remove odd characters (link Encodings)
+    * parse CSV, JSON, XML, YAML
+    * chain issues with bang methods
+
   * Float comparisons
   * 
 * How To
@@ -49,6 +55,7 @@ Articles
 * Array/String indexing
 * Hash - how do keys work? #eql? & #hash
 * Comparison operators explained (==, ===, =~, eql?, equal?)
+* How do Floats work, alternatives (Integer, Rational, BigDecimal, money gem)
 * Code Styleguide
 
 
