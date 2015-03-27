@@ -42,7 +42,6 @@ html lang="#{I18n.locale}"
       .row
         - if content_for? :sidebar
           .col-lg-9
-            = bootstrap_flash
             = yield
           .col-lg-3
             .well.sidebar-nav
