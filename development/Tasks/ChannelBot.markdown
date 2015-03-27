@@ -38,7 +38,7 @@ Channel Bot
 * !karma [NICK]
   With a given nickname, emit the current karma of NICK. Without, emit top 3 karma in channel, top 20 in privmsg.
 
-* >> CODE
+* \>\> CODE
   Evaluate ruby code.
   Eval rights are automatically revoked algorithmically (TODO: define algorithm)
 
@@ -46,6 +46,7 @@ Channel Bot
 ### Automatic functions
 
 * Channel logging (can we import the logs from whitequark?)
-* Automatically ban with *!*@<IP>$##ruby-fix-your-connection upon rapid reconnects (TODO: define algorithm)
-* Automatically revoke ban after ban-duration elapsed
-* Automatical recognition of dialogs
+* ban with *!*@<IP>$##ruby-fix-your-connection upon rapid reconnects (TODO: define algorithm)
+* revoke ban after ban-duration elapsed
+* Recognition of dialogs and proper logging
+* Greet first time visitors (account > nick+duration)
