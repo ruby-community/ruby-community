@@ -1,3 +1,5 @@
+- content_for :sidebar, render("irc_sidebar".freeze)
+
 markdown:
   Channel Rules
   =============
@@ -10,29 +12,33 @@ markdown:
 
   1. We are a polite and inclusive channel. Everybody is welcome.
   1. We will try to help you with your question.
-  1. Note that helping you with your problem, does not mean we will solve it for you. We will try to help you overcome misunderstandings, pick the best from a selection of solutions, improve your code, look at the right place in the documentation.
-  1. If you run into troubles with another channel guest, our operators (short: ops) will help to resolve the issue (TODO: how to reach an op).
+  1. Note that helping you with your problem, does not mean we will solve it for you.  
+     We will try to help you overcome misunderstandings, pick the best from a selection of solutions, improve your code, look at the right place in the documentation.
+  1. We won't provide help for code you can't disclose, or private help in a query. That's consulting. If you need that, hire and pay a consultant.
+  1. If you run into troubles with another channel guest, our [operators](#{page_path("irc_staff".freeze, anchor: "operators".freeze)}) (short: ops) will help to resolve the issue.
   1. If you caused trouble and consequently got removed from the channel, you will get informed about the reason and duration of the ban.
 
-
-  ### What you can't expect from the channel
-
-  1. We will not solve your problem for you.
 
   ### What the channel expects from you
 
   1. Be polite, considerate and inclusive. Treat others with respect.
-  1. Before you ask a question, make sure you did your due diligence. You can find method documentation at http://ruby-doc.org, you can test code snippets using the command line tool irb (or pry). (TODO: links)
+  1. Before you ask a question, make sure you did your due diligence.  
+     You can find method documentation at [ruby-doc.org](http://ruby-doc.org).  
+     You can test code snippets using the command line tool irb (or [pry](https://rubygems.org/gems/pry)).  
+     We trust you know how to use google. If you googled and didn't find anything, tell us which terms you googled.
   1. When you ask a question, make it evident that you put in some effort of your own prior to asking. This goes a long way to get good will and through that, better help.
   1. When you ask a question about a bug you experience, make sure you put the following information on gist.github.com: your code, your input, the output you expect, the output you actually get. If you get an exception, also put up the full backtrace.
   1. When you ask a question about how to do X, tell us why you want to do X. Also show (via gist.github.com) us your current approach.
   1. After asking your question, be patient. It may take a while for somebody to pick it up. If you don't get an answer for a long time, consider whether you provided all information necessary to help you.
+  1. If you post the question in other places, inform the channel up front about that. Say clearly in which other places you are also looking for help.
   1. If you behave rudely, or otherwise disturb the channel, an operator may kick you as a warning, or even ban you from the channel.  
-     Offensive behavior include but are not limited to:
+     Offensive behavior include but are not limited to (in no particular order):
     * Name-calling
     * Ad-hominem attacks
     * Sexually or racially charged slurring
-    * Spamming
+    * Spamming (that includes abusing the channel bot's eval function)
+    * Derogatory comments
+    * Trolling
     * Excessive off-topic talk while ruby related topics are discussed
   1. If you're offended by somebody's behavior, remain civil. Tell them what and why you did not like about their behavior.
   1. If you can't resolve your problem with another channel member, either add that person to your irc client's ignore, or ask for help. But under no circumstances become rude or offensive.
@@ -49,55 +55,3 @@ markdown:
      Sadly experience shows that most people don't take an operator's warning serious unless the
      warning gets additional weight through a kick.
   1. If you get banned, you are also informed about the duration of the ban
-
-  ## From #RubyOnRails
-
-  ### Welcome to #ruby
-
-  **Please behave in a polite, considerate and inclusive manner in the channel at all times. People volunteer their time in the channel to help people like you with your Rails problems and some respect (in both directions) will go an extremely long way.**
-
-  To get the best help out of #rubyonrails, follow these rules:
-
-  1. Do your research before hand. Your question may be answerable with a quick Google search or by simply experimenting. If you're using a method in Rails, look it up in the [API Docs](http://api.rubyonrails.org) or in the [Official Guides](http://guides.rubyonrails.org).
-  1. If you've tried Googling, explain what terms you've tried to use so people can better help you.
-  1. **Clearly explain what is happening and create a Gist (http://gist.github.com), ([with neat formatting, so that people can read it easily](https://github.com/radar/guides/blob/master/using-gist.markdown)) or Pastie (http://pastie.org) of the code that is causing the problem you are encountering, as well as any useful output like stacktraces.**
-    1. A "Full Trace" as opposed to the default "Application Trace" is preferred.
-    2. *NO FAKE CODE. If you're under an NDA, we cannot help you with your problem. Go hire a consultant.*
-  1. **Do not use any service that is not Pastie or Gist to post code**. Pastebin, for example has a tiny font and it has ads on it which cause the page to load slowly. Other paste services generally look like crap.
-  1. Saying that something "doesn't work" is completely useless to the people who are trying to help you. Please show all available information you have that indicates to you that something doesn't work.
-  1. Remember that using English is preferable, as the majority of people in the channel speak it. Asking in other languages may give you a response, but English is best.
-  1. Anything more than 2 lines goes in a Gist (http://gist.github.com) or a Pastie (http://pastie.org). Spamming the channel with walls of text is not welcome.
-  1. Treat people in a considerate manner, as they are volunteering *their* time to help *you*. If you're helping, do so in a kind and considerate manner; you were a newbie once too. If you're being annoying or rude you may be muted by one of the channel ops. 
-  1. Do not use excessive punctuation. This includes question marks (?), exclamation marks (!) and ellipsis (...).
-  1. Do not beg / plead with people to help you. This includes asking questions like "Any ideas?" after posting your original question.
-  1. Do not repeat your question every 5 minutes expecting somebody to answer it. If you do not get a reply after the first time perhaps posting your question on StackOverflow (http://stackoverflow.com) would help you. Linking to the question in the channel after you've posted it is OK.
-  1. Do not PM members of the channel without first asking if that is OK.
-  1. If you're going to tell someone to "Just google it" or "RTFM", tell them what terms to use on Google exactly, or link them to the place in the documentation.  
-
-  ## From http://contributor-covenant.org/version/1/0/0/code_of_conduct.txt
-
-  ### Contributor Code of Conduct
-
-  As contributors and maintainers of this project, we pledge to respect all people who 
-  contribute through reporting issues, posting feature requests, updating documentation,
-  submitting pull requests or patches, and other activities.
-
-  We are committed to making participation in this project a harassment-free experience for
-  everyone, regardless of level of experience, gender, gender identity and expression,
-  sexual orientation, disability, personal appearance, body size, race, ethnicity, age, or religion.
-
-  Examples of unacceptable behavior by participants include the use of sexual language or
-  imagery, derogatory comments or personal attacks, trolling, public or private harassment,
-  insults, or other unprofessional conduct.
-
-  Project maintainers have the right and responsibility to remove, edit, or reject comments,
-  commits, code, wiki edits, issues, and other contributions that are not aligned to this 
-  Code of Conduct. Project maintainers who do not follow the Code of Conduct may be removed 
-  from the project team.
-
-  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by 
-  opening an issue or contacting one or more of the project maintainers.
-
-  This Code of Conduct is adapted from the Contributor Covenant 
-  (http:contributor-covenant.org), version 1.0.0, available at 
-  http://contributor-covenant.org/version/1/0/0/
