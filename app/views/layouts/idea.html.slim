@@ -12,10 +12,6 @@ html lang="en"
     link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" /
     link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" /
     = stylesheet_link_tag "application", :media => "all"
-    link href="/plugins/rs-plugin/css/settings.css" media="screen" rel="stylesheet" /
-    link href="/plugins/rs-plugin/css/extralayers.css" media="screen" rel="stylesheet" /
-    link href="/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" /
-    link href="/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" /
     /! HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     /![if lt IE 9]
       | <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script
@@ -90,7 +86,7 @@ html lang="en"
                 /! logo
                 .logo
                   a href="/" 
-                    img#logo alt="iDea" src="/images/logo_red.png" /
+                    = image_tag "logo.png", size: "174x100", alt: "Ruby Community Logo"
                 /! name-and-slogan
                 .site-slogan
                   | The <a href="irc://irc.freenode.net/#ruby">#ruby</a> company website

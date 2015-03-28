@@ -8,15 +8,9 @@
 @import "idea/red.css";
 @import "idea/animate.css";
 @import "idea/animations.css";
-
-/*
-    link href="/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" /
-    link href="/fonts/fontello/css/fontello.css" rel="stylesheet" /
-    link href="/plugins/rs-plugin/css/settings.css" media="screen" rel="stylesheet" /
-    link href="/plugins/rs-plugin/css/extralayers.css" media="screen" rel="stylesheet" /
-    link href="/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" /
-    link href="/css/animations.css" rel="stylesheet" /
-    link href="/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" /
-*/
+@import "idea/plugins/rs-plugin/settings.scss";
+@import "idea/plugins/rs-plugin/extralayers.scss";
+@import "idea/plugins/owl-carousel/owl.carousel.scss";
+@import "idea/plugins/magnific-popup/magnific-popup.css";
 
 @import "public/faqs.sass";
