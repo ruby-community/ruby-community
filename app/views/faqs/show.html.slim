@@ -1,18 +1,59 @@
-- content_for :javascript do
-  javascript:
-    $(function() {
-      var highlight = window.location.hash.substr(1)
-      if (highlight) {
-        $('li[data-name='+highlight+']').addClass('highlight')
-      }
-    })
+h1.page-title Frequently Asked Questions
+p TODO explanation
 
-/
-  h1 FAQ
+.tabs-style-2
+  ul.nav.nav-tabs role="tablist" 
+    li.active
+      a data-toggle="tab" href="#tab-generic" role="tab" 
+        i.fa.fa-life-saver.pr-10
+        | Generic
+    li
+      a data-toggle="tab" href="#tab-syntax" role="tab" 
+        i.fa.fa-user.pr-10
+        | Syntax
+    li
+      a data-toggle="tab" href="#tab-string" role="tab" 
+        i.fa.fa-star.pr-10
+        | String
+    li
+      a data-toggle="tab" href="#tab-array" role="tab" 
+        i.fa.fa-star.pr-10
+        | Array
+    li
+      a data-toggle="tab" href="#tab-hash" role="tab" 
+        i.fa.fa-star.pr-10
+        | Hash
+    li
+      a data-toggle="tab" href="#tab-numeric" role="tab" 
+        i.fa.fa-star.pr-10
+        | Numeric
+  /! Tab panes
+  .tab-content
+    #tab-generic.tab-pane.fade.in.active
+      /! accordion start
+      #accordion-faq-1.panel-group
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a.collapsed data-parent="#accordion-faq-1" data-toggle="collapse" href="#collapse-1" 
+                i.fa.fa-question-circle.pr-10
+                | Is ruby better than X? 
+          #collapse-1.panel-collapse.collapse
+            .panel-body
+              | Yes, of course. (No - see "better", context matters)
 
-  ol
-    li data-name="float_cmp" Why is `0.1 + 0.2 == 0.3` false?
-    li data-name="equal_to_a_or_b" Why does `"b" == "a" || "b"` not return true?
+    #tab-syntax.tab-pane.fade
+      /! accordion start
+      #accordion-faq-2.panel-group
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a.collapsed data-parent="#accordion-faq-2" data-toggle="collapse" href="#collapse-2" 
+                i.fa.fa-question-circle.pr-10
+                | What is a literal?  
+          #collapse-2.panel-collapse.collapse
+            .panel-body
+              | A literal is an object where its value is literally in the code. Examples: 123, "Hello", []. Examples of non-literal values: string = gets, hash = JSON.parse(value), sum = a + b
 
 markdown:
   FAQ
