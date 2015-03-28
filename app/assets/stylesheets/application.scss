@@ -14,3 +14,18 @@
 @import "idea/plugins/magnific-popup/magnific-popup.css";
 
 @import "public/faqs.sass";
+
+
+img.fork-me {
+  display:  none;
+  z-index:  10000;
+  position: absolute;
+  top:      0;
+  right:    0;
+  border:   0;
+}
+@media (min-width: 768px) {
+  img.fork-me {
+    display: block;
+  }
+}
