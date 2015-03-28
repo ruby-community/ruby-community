@@ -11,7 +11,9 @@ README
 
 * Ruby version: 2.2.1
 * System dependencies: none so far
-* Configuration: config/database.yml and config/secrets.yml need to be set up
+* Configuration:
+  * `cp config/database.example.yml config/database.yml`
+  * `cp config/secrets.example.yml config/secrets.yml`
 * Database creation: rake db:migrate
 * Database initialization: rake db:seed
 * How to run the test suite: no test suite so far
