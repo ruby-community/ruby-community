@@ -1,0 +1,334 @@
+%!PS-Adobe-3.0
+%%Creator: Adobe Illustrator(TM) 7.0 by Xara.
+%%For: (John W. Long) (Personal Property)
+%%Title: (Untitled4 *)
+%%CreationDate: (22/03/06) (09:58 AM)
+%%BoundingBox: 481 79 680 277
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%%DocumentNeededResources: procset Adobe_level2_AI5 1.2 0 
+%%+ procset Adobe_packedarray 2.0 0
+%%+ procset Adobe_ColorImage_AI6 1.1 0
+%%+ procset Adobe_cshow 2.0 8
+%%+ procset Adobe_cmykcolor 1.1 0
+%%+ procset Adobe_customcolor 1.0 0
+%%+ procset Adobe_typography_AI5 1.0 1
+%%+ procset Adobe_pattern_AI3 1.0 1
+%%+ procset Adobe_Illustrator_AI5 1.2 0
+%AI3_ColorUsage: Color
+%AI5_FileFormat 2.0
+%%EndComments
+%%BeginProlog
+%%IncludeResource: procset Adobe_level2_AI5 1.2 0
+%%IncludeResource: procset Adobe_packedarray 2.0 0
+%%IncludeResource: procset Adobe_ColorImage_AI6 1.1 0
+%%IncludeResource: procset Adobe_cshow 2.0 8
+%%IncludeResource: procset Adobe_cmykcolor 1.1 0
+%%IncludeResource: procset Adobe_customcolor 1.0 0
+%%IncludeResource: procset Adobe_typography_AI5 1.1 0
+%%IncludeResource: procset Adobe_pattern_AI3 1.0 1
+%%IncludeResource: procset Adobe_Illustrator_AI5 1.2 0
+%%EndProlog
+%%BeginSetup
+Adobe_level2_AI5 /initialize get exec
+Adobe_packedarray /initialize get exec
+Adobe_ColorImage_AI6  /initialize get exec
+Adobe_cshow /initialize get exec
+Adobe_cmykcolor /initialize get exec
+Adobe_customcolor /initialize get exec
+Adobe_Illustrator_AI5_vars Adobe_Illustrator_AI5 Adobe_typography_AI5 /initialize get exec
+Adobe_pattern_AI3 /initialize get exec
+Adobe_Illustrator_AI5 /initialize get exec
+15 Bn
+%AI5_BeginGradient: (Linear Gradient 1)
+(Linear Gradient 1) 0 5 Bd
+[
+0.40 1.00 1.00 0.00 1 50 100%_Bs
+0.40 1.00 1.00 0.00 1 50 99%_Bs
+0.10 0.83 0.80 0.00 1 50 41%_Bs
+0.00 0.54 0.54 0.00 1 50 0%_Bs
+0.00 0.54 0.54 0.00 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 2)
+(Linear Gradient 2) 0 4 Bd
+[
+0.43 0.92 0.96 0.00 1 50 100%_Bs
+0.43 0.92 0.96 0.00 1 50 99%_Bs
+0.47 0.92 1.00 0.00 1 50 0%_Bs
+0.47 0.92 1.00 0.00 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 3)
+(Linear Gradient 3) 0 6 Bd
+[
+0.34 1.00 0.98 0.00 0.65 0.00 0.01 2 50 100%_Bs
+0.34 1.00 0.98 0.00 0.65 0.00 0.01 2 50 99%_Bs
+0.12 0.76 0.80 0.00 1 50 46%_Bs
+0.09 0.54 0.56 0.00 1 50 23%_Bs
+0.00 0.00 0.00 0.00 1 50 0%_Bs
+0.00 0.00 0.00 0.00 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 4)
+(Linear Gradient 4) 0 6 Bd
+[
+0.34 0.96 1.00 0.00 1 50 100%_Bs
+0.34 0.96 1.00 0.00 1 50 99%_Bs
+0.25 0.89 0.92 0.00 1 50 56%_Bs
+0.10 0.54 0.58 0.00 1 50 23%_Bs
+0.00 0.00 0.00 0.00 1 50 0%_Bs
+0.00 0.00 0.00 0.00 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 5)
+(Linear Gradient 5) 0 6 Bd
+[
+0.34 0.96 1.00 0.00 1 50 100%_Bs
+0.34 0.96 1.00 0.00 1 50 99%_Bs
+0.21 0.85 0.90 0.00 1 50 40%_Bs
+0.10 0.60 0.63 0.00 1 50 18%_Bs
+0.00 0.00 0.00 0.00 1 50 0%_Bs
+0.00 0.00 0.00 0.00 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 6)
+(Linear Gradient 6) 0 5 Bd
+[
+0.25 0.98 0.98 0.00 1 50 100%_Bs
+0.25 0.98 0.98 0.00 1 50 99%_Bs
+0.21 0.87 0.89 0.00 1 50 54%_Bs
+0.00 0.00 0.00 0.00 1 50 0%_Bs
+0.00 0.00 0.00 0.00 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 7)
+(Linear Gradient 7) 0 5 Bd
+[
+0.25 0.89 0.94 0.00 1 50 100%_Bs
+0.25 0.89 0.94 0.00 1 50 99%_Bs
+0.12 0.74 0.78 0.00 1 50 31%_Bs
+0.00 0.00 0.00 0.00 1 50 0%_Bs
+0.00 0.00 0.00 0.00 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 8)
+(Linear Gradient 8) 0 10 Bd
+[
+0.09 0.85 0.96 0.00 1 50 100%_Bs
+0.09 0.85 0.96 0.00 1 50 99%_Bs
+0.30 0.92 1.00 0.00 1 50 72%_Bs
+0.36 0.90 1.00 0.00 1 50 46%_Bs
+0.49 0.96 1.00 0.00 1 50 33%_Bs
+0.21 0.80 0.83 0.00 1 50 27%_Bs
+0.00 0.00 0.00 0.00 1 50 17%_Bs
+0.00 0.00 0.00 0.00 1 50 7%_Bs
+0.25 1.00 0.92 0.00 0.74 0.00 0.07 2 50 0%_Bs
+0.25 1.00 0.92 0.00 0.74 0.00 0.07 2 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 9)
+(Linear Gradient 9) 0 5 Bd
+[
+0.34 0.96 0.90 0.00 1 50 100%_Bs
+0.34 0.96 0.90 0.00 1 50 99%_Bs
+0.40 0.96 1.00 0.00 1 50 54%_Bs
+0.45 0.96 1.00 0.00 1 50 0%_Bs
+0.45 0.96 1.00 0.00 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 10)
+(Linear Gradient 10) 0 4 Bd
+[
+0.38 0.96 1.00 0.00 1 50 100%_Bs
+0.38 0.96 1.00 0.00 1 50 99%_Bs
+0.49 0.92 0.94 0.03 1 50 0%_Bs
+0.49 0.92 0.94 0.03 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 11)
+(Linear Gradient 11) 0 4 Bd
+[
+0.38 0.92 0.94 0.00 1 50 100%_Bs
+0.38 0.92 0.94 0.00 1 50 99%_Bs
+0.49 0.90 0.92 0.07 1 50 0%_Bs
+0.49 0.90 0.92 0.07 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Radial Gradient 1)
+(Radial Gradient 1) 1 4 Bd
+[
+0.34 0.96 1.00 0.00 1 50 0%_Bs
+0.34 0.96 1.00 0.00 1 50 0%_Bs
+0.49 0.94 0.96 0.03 1 50 99%_Bs
+0.49 0.94 0.96 0.03 1 50 100%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Radial Gradient 2)
+(Radial Gradient 2) 1 4 Bd
+[
+0.36 0.96 1.00 0.00 1 50 0%_Bs
+0.36 0.96 1.00 0.00 1 50 0%_Bs
+0.49 0.94 0.96 0.01 1 50 99%_Bs
+0.49 0.94 0.96 0.01 1 50 100%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 12)
+(Linear Gradient 12) 0 5 Bd
+[
+0.30 0.94 0.92 0.00 1 50 100%_Bs
+0.30 0.94 0.92 0.00 1 50 99%_Bs
+0.38 0.94 0.94 0.00 1 50 43%_Bs
+0.40 0.83 0.87 0.09 1 50 0%_Bs
+0.40 0.83 0.87 0.09 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%AI5_BeginGradient: (Linear Gradient 13)
+(Linear Gradient 13) 0 5 Bd
+[
+0.49 0.85 0.89 0.07 1 50 100%_Bs
+0.49 0.85 0.89 0.07 1 50 99%_Bs
+0.43 0.94 0.96 0.00 1 50 44%_Bs
+0.30 0.94 1.00 0.00 1 50 0%_Bs
+0.30 0.94 1.00 0.00 1 50 0%_Bs
+BD
+%AI5_EndGradient
+%%EndSetup
+%AI5_BeginLayer
+1 1 1 1 0 0 0 0 0 0 Lb
+(Layer 1) Ln
+1 XR
+1.22 w
+0 j
+[ ] 0 d
+0 J
+522.56 79.71 m
+669.03 89.65 l
+680.31 237.34 l
+635.68 146.88 l
+522.56 79.71 l
+1 (Linear Gradient 1) 665.44 66.95 119.527 84.8156 1 0 0 1 0 0 Bg
+f
+2 j
+622.39 131.36 m
+669.27 89.75 l
+656.68 176.64 l
+622.39 131.36 l
+1 (Linear Gradient 2) 651.31 85.34 146.136 64.8739 1 0 0 1 0 0 Bg
+f
+523.05 79.90 m
+669.44 89.75 l
+577.21 96.99 l
+523.05 79.90 l
+1 (Linear Gradient 2) 651.31 85.34 146.136 64.8739 1 0 0 1 0 0 Bg
+f
+495.52 144.52 m
+523.18 79.88 l
+546.22 155.36 l
+495.52 144.52 l
+1 (Linear Gradient 3) 516.92 149.29 -81.2525 54.9117 1 0 0 1 0 0 Bg
+f
+540.51 157.28 m
+622.38 131.11 l
+601.18 214.15 l
+540.51 157.28 l
+1 (Linear Gradient 4) 578.86 200.61 -86.8204 55.4754 1 0 0 1 0 0 Bg
+f
+602.18 208.19 m
+675.50 212.98 l
+618.15 259.82 l
+602.18 208.19 l
+1 (Linear Gradient 5) 642.10 254.74 -76.936 40.7497 1 0 0 1 0 0 Bg
+f
+593.67 276.77 m
+648.68 276.52 l
+614.95 257.88 l
+593.67 276.77 l
+1 (Linear Gradient 6) 600.28 267.50 26.5651 44.3792 1 0 0 1 0 0 Bg
+f
+484.88 175.67 m
+482.18 119.20 l
+496.31 144.97 l
+484.88 175.67 l
+1 (Linear Gradient 7) 487.64 163.89 -84.2963 32.8727 1 0 0 1 0 0 Bg
+f
+0.00 0.00 0.00 0.00 (White 2 2) 0 x
+484.12 176.64 m
+495.62 144.02 l
+545.59 155.23 l
+602.64 208.25 l
+618.74 259.39 l
+593.39 277.29 l
+550.29 261.16 l
+536.71 248.53 510.36 223.54 509.41 223.07 c
+508.47 222.59 492.01 191.48 484.12 176.64 c
+f
+524.50 235.24 m
+553.93 264.42 591.87 281.66 606.43 266.97 c
+620.98 252.28 605.55 216.58 576.12 187.41 c
+546.69 158.24 509.22 140.05 494.67 154.74 c
+480.11 169.42 495.07 206.07 524.50 235.24 c
+1 (Linear Gradient 8) 462.52 123.25 45.7988 220.279 1 0 0 1 0 0 Bg
+f
+523.18 79.91 m
+546.04 155.63 l
+621.96 131.24 l
+594.51 105.50 563.98 83.74 523.18 79.91 c
+1 (Linear Gradient 9) 577.96 92.90 166.136 47.642 1 0 0 1 0 0 Bg
+f
+602.74 208.40 m
+622.23 131.20 l
+645.16 155.31 665.74 181.23 675.82 213.29 c
+602.74 208.40 l
+1 (Linear Gradient 10) 655.34 155.79 138.131 55.1837 1 0 0 1 0 0 Bg
+f
+675.62 212.90 m
+683.42 236.44 685.22 270.21 648.44 276.48 c
+618.26 259.81 l
+675.62 212.90 l
+1 (Linear Gradient 11) 671.01 224.87 133.088 29.9655 1 0 0 1 0 0 Bg
+f
+0.38 0.92 0.96 0.00 (_48862000) 0 x
+482.18 119.54 m
+483.26 80.69 511.29 80.11 523.23 79.77 c
+495.65 144.18 l
+482.18 119.54 l
+f
+602.85 208.28 m
+620.47 197.45 655.98 175.70 656.70 175.30 c
+657.82 174.67 672.01 199.23 675.23 213.11 c
+602.85 208.28 l
+1 (Radial Gradient 1) 626.01 197.90 43.4584 50.36 1 0 0 1 0 0 Bg
+f
+546.01 155.63 m
+576.57 96.67 l
+594.64 106.47 608.79 118.41 621.75 131.20 c
+546.01 155.63 l
+1 (Radial Gradient 2) 556.27 131.54 8.13034 66.9469 1 0 0 1 0 0 Bg
+f
+495.53 144.10 m
+491.20 92.54 l
+499.37 81.38 510.61 80.41 522.40 81.28 c
+513.87 102.51 496.83 144.96 495.53 144.10 c
+1 (Linear Gradient 12) 512.75 81.10 106.423 59.0043 1 0 0 1 0 0 Bg
+f
+618.08 259.68 m
+678.79 251.16 l
+675.55 264.89 665.60 273.75 648.64 276.52 c
+618.08 259.68 l
+1 (Linear Gradient 13) 637.14 268.21 -23.8175 40.8816 1 0 0 1 0 0 Bg
+f
+LB
+%AI5_EndLayer
+%%PageTrailer
+showpage
+%%Trailer
+Adobe_Illustrator_AI5 /terminate get exec
+Adobe_level2_AI5 /terminate get exec
+Adobe_packedarray /terminate get exec
+Adobe_ColorImage_AI6 /terminate get exec
+Adobe_cshow /terminate get exec
+Adobe_cmykcolor /terminate get exec
+Adobe_customcolor /terminate get exec
+Adobe_typography_AI5 /terminate get exec
+Adobe_pattern_AI3 /terminate get exec
+%%EOF
