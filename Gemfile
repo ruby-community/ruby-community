@@ -11,6 +11,10 @@ gem "bcrypt", "~> 3.1.7"
 gem "markdown"
 gem "sqlite3" # TODO: replace with pg
 
+# For iDea theme
+gem "fontello-rails"
+gem "font-awesome-rails"
+
 gem "redcarpet"
 
 group :development, :test do

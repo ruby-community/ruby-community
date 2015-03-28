@@ -24,5 +24,6 @@ module RubyCommunity
     config.active_record.raise_in_transactional_callbacks = true
 
     config.contributors = %w[apeiros atmosx c-c jheg]
+    config.assets.precompile += %w[fontello.eot fontello.woff fontello.ttf]
   end
 end
