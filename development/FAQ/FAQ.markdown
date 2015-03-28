@@ -1,0 +1,122 @@
+FAQ
+===
+
+
+ Topics
+-------
+
+* Top 20
+* Generic
+* Setup
+* Syntax
+* Core Classes
+* Stdlib
+* Gems
+* Recipes
+
+Q & As
+------
+
+### Generic
+
+* Q: Is ruby better than X?
+  A: Yes, of course. (No - see "better", context matters)
+
+* Q: Should I use ruby or X?
+  A: You should - of course - use ruby. (No - see "better", context matters)
+
+* Q: Is ruby slow?
+  A: Depends. Execution is relatively slow, but in the ballpark of python, php, perl. Development
+  speed is quite fast, easily beats C, java.
+
+* Q: Anyone used X?
+  A: No. No one ever.
+
+* Q: What's the difference between this channel and #ruby-lang?
+
+### Setup
+
+* Q: How do I install ruby?
+  A: rvm, rbenv, ruby-install, apt, brew
+  most recommended: rvm / ruby-install
+
+### Syntax
+
+* Q: What is a literal?
+  A: A literal is an object where its value is literally in the code. Examples:
+  123, "Hello", []. Examples of non-literal values: string = gets, hash = JSON.parse(value),
+  sum = a + b
+
+* Q: What does the =, ?, ! at the end of a method name mean?
+  A: It's part of the method name
+
+* Q: What does the : mean in :foo?
+  A: It's part of Symbol literal. Just like the quotes are part of a String literal.
+
+* Q: What do the || mean in `something { |argument| }`?
+  A: They delimit the arguments a block accepts. Much like in `def foo(argument)` the () delimit the
+  arguments the method takes.
+
+* Q: What does -> mean in `x = -> {}`?
+  A: It's part of stabby lambda syntax
+
+* Q: What does the @ mean in front of a variable name?
+  A: It's part of the variable name. It means it is an instance variable. Instance variables are
+  scoped per Object. This means any method called on the same object will see the same instance
+  variable.
+
+* Q: How can I pass a method as an argument to another method?
+  A: 
+
+* Q: Why does `"b" == "a" || "b"` not return true?
+  A: 
+
+### Core classes
+
+#### String
+
+* Q: I have odd characters in my string, like "�", how do I remove those?
+  A: That's a unicode replacement character. This most likely means that you have read data from a
+  source which is NOT unicode, but treated it as unicode. You get rid of this by figuring the
+  source's encoding, read the data using that encoding, and then re-encoding to e.g. utf-8 by using
+  String#encode. Mandatory encoding article.
+
+* Q: I have some characters in my String I wish to remove
+  A: You can use either String#delete or String#gsub.
+
+* Q: How do I get the last N characters in a String?
+  A: Use `string[-N, N]`. Example: `"hello"[-3,3] # => "llo"`
+
+
+#### Array
+
+* Q: I created an Array of Arrays like this `ary = Array.new(5, [])`. When I add one Array, all
+  Arrays are changed. Why?
+  A: Your Array consists of 5 times the same Array. Use `ary = Array.new(5) { [] }` instead, which
+  populates your Array with different Arrays.
+
+#### Hash
+
+* Q: I created a Hash like this `hash = Hash.new([])`. When I add values to a key, like
+  `hash[:key] << 12`, nothing is stored in the Hash, why?
+  A: `hash[:key]` returns the default value, and you push on that default value. Create your Hash
+  like this instead: `hash = Hash.new { |hash, key| hash[key] = [] }`.
+
+
+#### Numeric
+
+* Q: Why is `3/2 == 0`?
+  A: `3/2` is an Integer division and returns an Integer. Depending on your needs and your context,
+  you can do any of `3.quo(2)` (will return a Rational), `3.fdiv(2)` (will return a Float), `3.0/2`
+  (will return a Float too) or `3/2.0` (will also return a Float).
+
+* Q: Why is `0.1 + 0.2 == 0.3` false?
+  A: Welcome to the world of floats. Floats have a fixed size and therefore a limited precision. If
+  we inspect the values more closely using `printf "%.60f\n%.40f\n", 0.1+0.2, 0.3`, we see that the
+  values of those expressions are `0.300000000000000044408920985006261616945266723632812500000000`
+  and `0.299999999999999988897769753748434595763683319091796875000000`. They differ subtly, but they
+  do differ and hence are not ==. In general, you should compare floats by using a delta comparison.
+  Example: `(a - b).abs < delta`. You have to choose a delta which suits your specific situation.
+  Alternatively use something else than floats. Ruby has implementations of Integer, Rational and
+  BigDecimal, which all might satisfy your needs.
+
