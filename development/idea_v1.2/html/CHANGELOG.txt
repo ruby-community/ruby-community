@@ -1,0 +1,30 @@
+iDea 1.2.0, 2015-02-25
+----------------------
+- Added Left Side Headers dark/light
+- Added Right Side Headers dark/light
+- Added Transparent headers dark/light
+- Added Home Page 6
+- Added Home Page 7
+- Added Shop Home page
+- Added Login page
+- Added Sign Up page
+- Added Login Fullscreen page
+- Added Sign Up Fullscreen page
+- Added Background Patterns page
+- Updated Twitter Bootstrap Framework to 3.3.2
+- Updated Fontawesome to latest release 4.3
+- Updated Magnific Popup plugin
+- Improvements to slideshows
+- Minor fixes
+
+iDea 1.1.0, 2015-01-07
+----------------------
+- Added HTML email templates
+- Added dark header version
+- Added invoice page
+- Added IE8 support
+- Updated Twitter Bootstrap Framework to 3.3.1
+- Fixed flickering issue on page load in Internet Explorer 11
+- Fixed text decoration issue of links @android touch devices
+- Fixed select with multiple attribute
+- Fixed header top dropdowns @mobile widths
