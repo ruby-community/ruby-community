@@ -14,8 +14,8 @@ README
 * Configuration:
   * `cp config/database.example.yml config/database.yml`
   * `cp config/secrets.example.yml config/secrets.yml`
-* Database creation: rake db:migrate
-* Database initialization: rake db:seed
+* Database creation: `rake db:migrate`
+* Database initialization: `rake db:seed`
 * How to run the test suite: no test suite so far
 
 Take also a look at the "Contribute" section below.
