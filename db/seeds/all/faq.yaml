@@ -1,11 +1,11 @@
 Generic:
-  - - Is ruby better than X?
+  - - Is Ruby better than X?
     - Yes, of course. (No - see "better", context matters)
 
-  - - Should I use ruby or X?  
-    - You should - of course - use ruby. (No - see "better", context matters)
+  - - Should I use Ruby or X?  
+    - You should - of course - use Ruby. (No - see "better", context matters)
 
-  - - Is ruby slow?  
+  - - Is Ruby slow?  
     - Depends. Execution is relatively slow, but in the ballpark of python, php, perl. Development
       speed is quite fast, easily beats C, java.
 
@@ -19,7 +19,7 @@ Generic:
     - "Please ask in #RubyOnRails."
 
 Setup:
-  - - How do I install ruby?  
+  - - How do I install Ruby?  
     - |
       rvm, rbenv, ruby-install, apt, brew
       most recommended: rvm / ruby-install"
