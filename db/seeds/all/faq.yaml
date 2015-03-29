@@ -34,7 +34,7 @@ Syntax:
   - - What does the =, ?, ! at the end of a method name mean?
     - It's part of the method name
 
-  - - What does the : mean in :foo?
+  - - "What does the : mean in :foo?"
     - It's part of Symbol literal. Just like the quotes are part of a String literal.
 
   - - What do the || mean in `something { |argument| }`?  
