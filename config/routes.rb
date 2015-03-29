@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcomes#show'
+  root to: redirect('pages/user_rules') #'welcomes#show'
 
   resource  :welcomes
   resources :pages
