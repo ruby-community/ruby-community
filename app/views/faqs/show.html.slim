@@ -12,8 +12,7 @@ p TODO explanation
   /! Tab panes
   .tab-content
     - FrequentlyAskedQuestion.topics.each_with_index do |topic, idx|
-      /! .in.active
-      tab-pane.fade id="tab-#{topic.downcase}" class="#{idx.zero? ? 'in active' : nil}"
+      .tab-pane.fade id="tab-#{topic.downcase}" class="#{idx.zero? ? 'in active' : nil}"
         /! accordion start
         - FrequentlyAskedQuestion.where(topic: topic).order(:position).each do |faq|
           .panel-group id="accordion-faq-#{faq.id}"
@@ -23,6 +22,6 @@ p TODO explanation
                   a.collapsed data-parent="#accordion-faq-#{faq.id}" data-toggle="collapse" href="#collapse-#{faq.id}"
                     i.fa.fa-question-circle.pr-10
                     = faq.question
-              .panel-collapse.collapse id="#collapse-#{faq.id}"
+              .panel-collapse.collapse id="collapse-#{faq.id}"
                 .panel-body
                   = faq.answer
