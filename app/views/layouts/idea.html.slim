@@ -1,6 +1,6 @@
 doctype html
 
-html lang="en" 
+html lang="en"
   head
     meta charset="utf-8" /
     title= content_for?(:title) ? yield(:title) : "ruby-community.com"
@@ -48,7 +48,7 @@ html lang="en"
                 /! ================
                 .header-top-dropdown
                   .btn-group.dropdown
-                    button.btn.dropdown-toggle data-toggle="dropdown" type="button" 
+                    button.btn.dropdown-toggle data-toggle="dropdown" type="button"
                       i.fa.fa-user
                       | Login
                     ul.dropdown-menu.dropdown-menu-right.dropdown-animation
@@ -85,7 +85,7 @@ html lang="en"
               .header-left.clearfix
                 /! logo
                 .logo
-                  a href="/" 
+                  a href="/"
                     = image_tag "logo.png", size: "87x50", alt: "Ruby Community Logo"
                 /! name-and-slogan
                 .site-slogan
@@ -100,11 +100,11 @@ html lang="en"
                 .main-navigation.animated
                   /! navbar start
                   /! ================
-                  nav.navbar.navbar-default role="navigation" 
+                  nav.navbar.navbar-default role="navigation"
                     .container-fluid
                       /! Toggle get grouped for better mobile display
                       .navbar-header
-                        button.navbar-toggle data-target="#navbar-collapse-1" data-toggle="collapse" type="button" 
+                        button.navbar-toggle data-target="#navbar-collapse-1" data-toggle="collapse" type="button"
                           span.sr-only Toggle navigation
                           span.icon-bar
                           span.icon-bar
@@ -129,19 +129,19 @@ html lang="en"
               /! header-right end
       /! header end
 
-      .page-intro style=("margin-top: 0px;") 
+      .page-intro style=("margin-top: 0px;")
         .container
           .row
             .col-md-12
               ol.breadcrumb
                 li
                   i.fa.fa-home.pr-10
-                  a href="index.html"  Home
+                  a href="/" Home
                 li.active Frequently Asked Questions
 
 
 
-      .page-top.object-non-visible data-animation-effect="fadeInUpSmall" data-effect-delay="100" 
+      .page-top.object-non-visible data-animation-effect="fadeInUpSmall" data-effect-delay="100"
         .container
           .row
             = yield
@@ -157,10 +157,10 @@ html lang="en"
                 p
                   | Copyright © 2015 by <a href="http://apeiros.me">apeiros</a>. All Rights Reserved.
               .col-md-6
-                nav.navbar.navbar-default role="navigation" 
+                nav.navbar.navbar-default role="navigation"
                   /! Toggle get grouped for better mobile display
                   .navbar-header
-                    button.navbar-toggle data-target="#navbar-collapse-2" data-toggle="collapse" type="button" 
+                    button.navbar-toggle data-target="#navbar-collapse-2" data-toggle="collapse" type="button"
                       span.sr-only Toggle navigation
                       span.icon-bar
                       span.icon-bar
