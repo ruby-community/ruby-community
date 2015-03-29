@@ -125,6 +125,12 @@ html lang="en"
                               li= link_to "FAQ",      faq_path
                               li= link_to "Links",    page_path("links")
                               /! li= link_to "Articles", page_path("articles")
+                          li.dropdown
+                            a.dropdown-toggle data-toggle="dropdown" href="#"  Contribution
+                            ul.dropdown-menu
+                              li= link_to "Contribute",      page_path("contribute")
+                              li= link_to "Code of Conduct", page_path("code_of_conduct")
+                              li= link_to "Contributors",    page_path("contributors")
                   /! navbar end
                 /! main-navigation end
               /! header-right end
