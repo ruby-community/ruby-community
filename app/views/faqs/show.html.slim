@@ -14,12 +14,12 @@ p TODO explanation
     - FrequentlyAskedQuestion.topics.each_with_index do |topic, idx|
       .tab-pane.fade id="tab-#{topic.downcase}" class="#{idx.zero? ? 'in active' : nil}"
         /! accordion start
-        - FrequentlyAskedQuestion.where(topic: topic).order(:position).each do |faq|
-          .panel-group id="accordion-faq-#{faq.id}"
+        .panel-group id="accordion-faq-#{topic.downcase}"
+          - FrequentlyAskedQuestion.where(topic: topic).order(:position).each do |faq|
             .panel.panel-default
               .panel-heading
                 h4.panel-title
-                  a.collapsed data-parent="#accordion-faq-#{faq.id}" data-toggle="collapse" href="#collapse-#{faq.id}"
+                  a.collapsed data-parent="#accordion-faq-#{topic.downcase}" data-toggle="collapse" href="#collapse-#{faq.id}"
                     i.fa.fa-question-circle.pr-10
                     = faq.question
               .panel-collapse.collapse id="collapse-#{faq.id}"
