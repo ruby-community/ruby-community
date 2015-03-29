@@ -134,11 +134,15 @@ html lang="en"
           .row
             .col-md-12
               ol.breadcrumb
-                li
-                  i.fa.fa-home.pr-10
-                  a href="/" Home
-                li.active Frequently Asked Questions
-
+                - if content_for? :breadcrumb
+                  li
+                    i.fa.fa-home.pr-10
+                    a href="/" Home
+                  = yield :breadcrumb
+                - else
+                  li
+                    i.fa.fa-home.pr-10
+                    a href="/" Home
 
 
       .page-top.object-non-visible data-animation-effect="fadeInUpSmall" data-effect-delay="100"

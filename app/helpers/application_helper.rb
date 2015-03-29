@@ -20,4 +20,17 @@ private
       id == "page_pages_show" ? "#{id}__#{params[:id]}" : id
     end
   end
+
+  def breadcrumb(links)
+    *normal, active = *links.to_a
+    normal = normal.map { |label, url| %{<li><a href="#{url}">#{h label}</a></li>} }.join("".freeze)
+    active = %{<li class="active">#{h active[0]}</li>}
+
+    content_for :breadcrumb, (normal+active).html_safe
+
+    nil
+  end
 end
+
+__END__
+li.active Frequently Asked Questions
