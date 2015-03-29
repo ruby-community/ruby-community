@@ -52,9 +52,6 @@ GEM
     execjs (2.3.0)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
-    fontello-rails (0.2.0)
-      railties (>= 3.2)
-      sass-rails (>= 3.2)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -166,7 +163,6 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass
   font-awesome-rails
-  fontello-rails
   jquery-rails
   markdown
   quiet_assets

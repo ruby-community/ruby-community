@@ -12,7 +12,6 @@ gem "markdown"
 gem "sqlite3" # TODO: replace with pg
 
 # For iDea theme
-gem "fontello-rails"
 gem "font-awesome-rails"
 
 gem "redcarpet"
