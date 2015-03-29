@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+position = 0
+FrequentlyAskedQuestion.destroy_all
+YAML.load_file('db/seeds/all/faq.yaml').each do |topic, faqs|
+  faqs.each do |question, answer|
+    position += 1
+    FrequentlyAskedQuestion.create! topic: topic, position: position, question: question, answer: answer
+  end
+end
