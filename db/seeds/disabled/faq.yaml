@@ -1,3 +1,29 @@
+Generic:
+  - - Is Ruby better than X?
+    - Yes, of course. (No - see "better", context matters)
+
+  - - Should I use Ruby or X?  
+    - You should - of course - use Ruby. (No - see "better", context matters)
+
+  - - Is Ruby slow?  
+    - Depends. Execution is relatively slow, but in the ballpark of python, php, perl. Development
+      speed is quite fast, easily beats C, java.
+
+  - - Anyone used X?  
+    - No. No one ever. (See "metaquestions")
+
+  - - "What's the difference between this channel and #ruby-lang?"
+    - "#ruby is larger than #ruby-lang, #ruby-lang is officially linked to by ruby-lang.org"
+
+  - - "In Rails, how can I …?"
+    - "Please ask in #RubyOnRails."
+
+Setup:
+  - - How do I install Ruby?  
+    - |
+      rvm, rbenv, ruby-install, apt, brew
+      most recommended: rvm / ruby-install"
+
 Syntax:
   - - What is a literal?
     - |
@@ -24,6 +50,12 @@ Syntax:
       It's part of the variable name. It means it is an instance variable. Instance variables are
       scoped per Object. This means any method called on the same object will see the same instance
       variable.
+
+  - - How can I pass a method as an argument to another method?  
+    - ""
+
+  - - Why does `"b" == "a" || "b"` not return true?  
+    - "" 
 
 String:
   - - I have odd characters in my string, like "�", how do I remove those?  

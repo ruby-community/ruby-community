@@ -164,10 +164,7 @@ html lang="en"
         .subfooter
           .container
             .row
-              .col-md-6
-                p
-                  | Copyright © 2015 by <a href="http://apeiros.me">apeiros</a>. All Rights Reserved.
-              .col-md-6
+              .col-md-12
                 nav.navbar.navbar-default role="navigation"
                   /! Toggle get grouped for better mobile display
                   .navbar-header
@@ -181,7 +178,7 @@ html lang="en"
                       li
                         a href="/" Home
                       li
-                        a href="https://github.com/apeiros/ruby-community" Contribute
+                        = link_to "Contribute", page_path("contribute")
         /! .subfooter end
       /! footer end
     /! page-wrapper end
