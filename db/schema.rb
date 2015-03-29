@@ -22,4 +22,6 @@ ActiveRecord::Schema.define(version: 20150329111019) do
     t.datetime "updated_at"
   end
 
+  add_index "frequently_asked_questions", ["topic"], name: "index_frequently_asked_questions_on_topic"
+
 end
