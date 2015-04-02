@@ -5,14 +5,14 @@ html lang="#{I18n.locale}"
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    title= content_for?(:title) ? yield(:title) : "ruby-community.com"
+    title= content_for?(:title) ? yield(:title) : "LearningRuby"
     = csrf_meta_tags
 
     /! Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
-      = javascript_include_tag "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"
-      = javascript_include_tag "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"
-
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' rel='stylesheet' type='text/css',
+    link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css' rel='stylesheet' type='text/css',
     = stylesheet_link_tag "application", :media => "all"
     = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
     = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
@@ -25,16 +25,14 @@ html lang="#{I18n.locale}"
 
 
 
-  body.front.no-trans id=page_body_id
-    a href="https://github.com/apeiros/ruby-community"
-      img.fork-me style="z-index: 10000; position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
+  body id=page_body_id
     .navbar.navbar-default.navbar-static-top
         .container
           button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href="/" Ruby Community
+          a.navbar-brand href="#"LearningRuby
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
               li= link_to "Rules",    page_path("user_rules".freeze)
@@ -46,6 +44,7 @@ html lang="#{I18n.locale}"
       .row
         - if content_for? :sidebar
           .col-lg-9
+            = bootstrap_flash
             = yield
           .col-lg-3
             .well.sidebar-nav
@@ -53,6 +52,7 @@ html lang="#{I18n.locale}"
 
         - else
           .col-lg-12
+            = bootstrap_flash
             = yield
 
       footer
