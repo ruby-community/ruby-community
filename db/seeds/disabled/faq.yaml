@@ -18,6 +18,13 @@ Generic:
   - - "In Rails, how can I …?"
     - "Please ask in #RubyOnRails."
 
+  - - "What's the best editor for Ruby?"
+    - "Anything that can edit text, when combined with a terminal, will do. Editor choice is
+       is a personal preference, try a few out and stick with what you like the most. Reevaluate
+       every couple of years if your chosen editor still fits your workflow or if there are
+       new contenders that suit you better. That said, vim and Sublime Text are the most popular
+       choices, Ruby Mine is the most popular full-featured IDE."
+
 Setup:
   - - How do I install Ruby?  
     - |
