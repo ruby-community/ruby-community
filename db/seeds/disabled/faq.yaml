@@ -57,6 +57,13 @@ Syntax:
   - - Why does `"b" == "a" || "b"` not return true?  
     - "" 
 
+  - - Why does `if a < b < c` not work?  
+    - |
+      `a < b < c` is syntax sugar for `a.<(b).<(c)`. And in the unsugared version you can easily see,
+      that you first call `a < b`, and then on the result of that, call `< c`. Since `<` always
+      returns true or false, you effectively call `true < c` or `false < c`.
+      To achieve what you want, you can either do `b.between?(a, b)`, or `a < b && b < c`.
+
 String:
   - - I have odd characters in my string, like "�", how do I remove those?  
     - |
