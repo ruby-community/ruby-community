@@ -1,3 +1,58 @@
+Generic:
+  - - Is Ruby better than X?
+    - No, for the reason that there is no "better" language than another. Ruby can be
+      more fitted in certain tasks, whereas it can also be problematic in other areas.
+      It all depends on a large number of parameters.
+
+  - - Should I use Ruby or X?
+    - It depends on many parameters. Ruby is a general purpose language which can achieve
+      anything. Then, deciding on if you should use it or not is all up to you, but
+      know that there is no good answer to this question.
+
+  - - Is Ruby slow?
+    - Ruby is an interpreted language, so it will be slower than native languages as
+      C, but will be close to Python or Perl. Ruby is fast to write, it can save you
+      a lot of time in development compared to C or Java.
+
+  - - Anyone used X?
+    - This kind of question is rarely useful, just describe your issue directly.
+
+  - - Will Ruby die?
+    - Ruby is around for a long time, well over 20 years already, major companies depend
+      on it, it is actively developed and available in the repositories of every major
+      distribution. No, Ruby will not go away anytime soon.
+
+  - - 'What''s the difference between this channel and #ruby-lang?'
+    - "#ruby is larger than #ruby-lang, #ruby-lang is officially linked to by ruby-lang.org"
+
+  - - In Rails, how can I …?
+    - "#ruby is targeted at general Ruby discussion. If your question targets Ruby on
+      Rails framework, please ask in #RubyOnRails (Channel requires registration to
+      join)."
+
+  - - What's the best editor for Ruby?
+    - Anything that can edit text, when combined with a terminal, will do. Editor choice
+      is is a personal preference, try a few out and stick with what you like the most.
+      Reevaluate every couple of years if your chosen editor still fits your workflow
+      or if there are new contenders that suit you better. That said, vim and Sublime
+      Text are the most popular choices, Ruby Mine is the most popular full-featured
+      IDE.
+
+Setup:
+  - - How do I install Ruby?
+    - |-
+      <p>There are multiple ways of getting ruby.</p>
+      <ul>
+      <li>On Linux, use your system package manager.</li>
+      <li>On Windows, you can use <a href="http://rubyinstaller.org/">Ruby installer</a>.</li>
+      <li>OS X comes with a pre-installed Ruby version.</li>
+      </ul>
+      <p>
+      However, you can also use solutions like RVM or rbenv to manage multiple and/or more
+      recent ruby versions at once easily. For more information, see the
+      <a href="https://www.ruby-lang.org/en/downloads/">official documentation</a>.
+      </p>
+
 Syntax:
   - - What is a literal?
     - |
@@ -24,6 +79,36 @@ Syntax:
       It's part of the variable name. It means it is an instance variable. Instance variables are
       scoped per Object. This means any method called on the same object will see the same instance
       variable.
+
+  - - How can I pass a method as an argument to another method?  
+    - |
+      You can get a callable object from a method by calling <code>#method</code>
+      on the object, for example <code>"hello".method(:length)</code>. You obtain
+      a <code>method</code> object which behaves like a <code>Proc</code> which you
+      can pass to other functions. 
+
+  - - What does "truthy" and "falsy" means?
+    - |
+      <p>
+      They refer to equivalent as booleans. Boolean is a type which can only
+      take two values: <code>true</code> and <code>false</code>.
+      </p>
+      <p>
+      When we use the terms "truthy" and "falsy", we refer to the equivalent as a
+      boolean value that an expression will have, which is used by control flow statements like <code>if</code> or <code>while</code> and filtering methods like <code>Enumerable#select</code>.</p>
+      <p>
+      Only two values are falsy, meaning that they will be interpreted as <code>false</code>: <code>nil</code> and <code>false</code>. Any other value, including <code>0</code>, will be truthy and be treated as <code>true</code>.
+      </p>
+
+  - - Why does `"b" == "a" || "b"` not return true?  
+    - |
+      <p>
+      The <code>||</code> operator returns the argument which is truthy. In this
+      case, <code>"b" == "a"</code> evaluates to false, but "b" evaluates to true, so "b" is returned.
+      </p>
+      <p>
+      See also the "What does "truthy" and "falsy" means?" answer.
+      </p>
 
 String:
   - - I have odd characters in my string, like "�", how do I remove those?  
