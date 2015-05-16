@@ -17,3 +17,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore other stuff
+/no_git/
