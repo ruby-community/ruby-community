@@ -1,0 +1,254 @@
+markdown:
+  ###### Author: Stefan Rusterholz (stefan.rusterholz@gmail.com); Date: 2015-04-17; Ruby 1.8-2.2
+  ###### TODO
+
+  * add a picture of all characters shown along a written one to check whether browser shows everything correctly.
+  * List the stuff you should know prior to reading the TL;DR edition, link the terms to a glossary.
+
+
+
+  Ruby and String encodings - TL;DR edition
+  =========================================
+
+
+
+  ### Note
+
+  This is the short "too long; didn't read" article. If it doesn't help you, read the [full length
+  article](http://example.com).  
+  Unless stated otherwise, this article covers Ruby version 2.1 and up.  
+  Other languages than Ruby will use different implementations. But the basic
+  concepts are the same.  
+  All code examples assume your terminal is set to output UTF-8.  
+
+
+
+  ### Strings in Ruby
+
+  In Ruby, a String is a set of two informations: the encoding of the String, and an array of bytes.
+  A byte consists of 8 bits.
+  You can write a binary encoded String using hex values in Ruby like this:
+
+      # All variants are "hello" in ASCII, which in hex is the bytes 68 65 6c 6c 6f
+      "\x68\x65\x6c\x6c\x6f".b # Ruby >=2.0
+      "\x68\x65\x6c\x6c\x6f".dup.force_encoding(Encoding::BINARY) # Ruby 1.9.x
+      "\x68\x65\x6c\x6c\x6f" # Ruby <=1.8
+
+  In the rest of the article, the above will be written using `0x68 65 6c 6c 6f`. The `0x` indicates
+  hex notation.
+
+
+
+  ### Encodings
+
+  An encoding determines how a single byte, or a sequence of bytes is mapped to a character and
+  vice versa. With some of the multibyte encodings, you additionally need to specify how the
+  individual bytes form an integer (endianness). In big endian, `0x00 fe` decodes to 254, in
+  little endian, the order is reversed and read as if it was `0xfe 00` and hence decodes to 65024.
+  Big endian is usually abbreviated to BE, little endian to LE. A file, or other input, which is
+  using UTF-8, -16 or -32 may start with a BOM (Byte Order Mark) to indicate the endianess. A BOM
+  is a short sequence of bytes.
+
+  Examples:
+
+  * `0xB0` in Windows-1252 encodes "°"
+  * `0xB0` in Mac-Roman encodes "∞"
+  * Encoding "ä" in Mac-Roman results in `0x8A`
+  * Encoding "ä" in Windows-1252 results in `0xE4`
+  * Encoding "ä" in Windows-1255 is not possible, because this encoding does not contain that character
+  * Encoding "ä" in UTF-8 results in `0xC3 A4`
+  * Encoding "ä" in UTF-16BE results in `0x00 E4`
+  * Encoding "ä" in UTF-16LE results in `0xE4 00`
+  * Encoding "ä" in UTF-32BE results in `0x00 00 00 E4`
+  * Encoding "ä" in UTF-32LE results in `0xE4 00 00 00`
+
+
+
+  ### Encodings of Strings in Ruby
+
+  In Ruby >=1.9 you can define the encoding of String and Regexp literals by using an encoding comment
+  (a special comment at the beginning of your file, e.g. for UTF-8, any of these works:
+  `# encoding: UTF-8`, `# coding: UTF-8`, `-*- coding: UTF-8 -*-`). Without such a comment, the
+  literals will always default to UTF-8 in Ruby \>=2.1. In Ruby 1.9 - 2.0 the default depends on
+  environment variables, which is why it's best to always use an encoding comment in those versions.
+  Otherwise your code will behave differently on different machines. Ruby 1.8 and older does not store
+  the encoding of a String along with it. A constructed String depends on its source. The most common
+  case is reading data from any kind of IO (files, sockets, databases). We will consider files as
+  examples. The concept is the same for other sources.  
+  There are two relevant values: external and internal encoding. They default to the values of
+  Encoding.default_external and .default_internal. Ruby will translate the input from the external
+  encoding to the internal (with one exception: setting external to "binary" will prevent Ruby from
+  translating it).
+
+  Examples:
+
+      File.read(path) # This will assume the file is encoded in Encoding.default_external, and translate it to Encoding.default_internal
+      File.read(path, encoding: "windows-1252") # This will assume the file is encoded in Windows-1252 and translate it to Encoding.default_internal
+      File.read(path, external_encoding: "windows-1252") # This will assume the file is encoded in Windows-1252 and translate it to Encoding.default_internal
+      File.read(path, internal_encoding: "windows-1252") # This will assume the file is encoded in Encoding.default_external and translate it to Windows-1252
+      File.read(path, encoding: "utf-8:windows-1252") # This will assume the file is encoded in UTF-8 and translate it to Windows-1252
+      File.read(path, external_encoding: "utf-8", internal_encoding: "windows-1252") # This will assume the file is encoded in UTF-8 and translate it to Windows-1252
+      File.read(path, encoding: "bom|utf-8") # This will assume the file is encoded in UTF-8 and strip the BOM if present
+
+
+
+  ### Figuring the Encoding of your Input
+
+  The short harsh truth is: there is no universal way to know the encoding of your input.
+  There are 3 common ways to deal with input encodings:
+
+  1. The data specifies a way to state the encoding of the data. For example XML has the encoding
+     attribute in its prolog, e.g. '<?xml version="1.0" encoding="UTF-8"?>'
+  2. The parties which exchange data specify the encoding beforehand. E.g. JSON is defined to be
+     always encoded in UTF-8.
+  3. Guess. And yes, this is horrible and error-prone.
+
+  It is important to understand that relying on 1. and 2. is dangerous. Clients/Servers may lie
+  about the encoding. They may even deliver data with mixed encodings. And again, yes, this is
+  horrible and leads to problems.
+  You can improve the guessing a bit if most variants you get is one form of unicode.
+  You check first for a BOM, if one is present, the BOM will reveal the precise encoding. If none is present, try UTF-8
+  and check whether Ruby's .valid_encoding? returns true. If it does, you're almost certainly fine. If it does not,
+  it all depends on how many remaining possible encodings you want to check. There exist libraries (see Gems section
+  below) which use heuristics to improve the chances for a correct guess. But it will still remain a guess.
+
+
+
+  ### Using the Tools Ruby Provides
+
+  * String#force_encoding sets the encoding value, but it does not change the byte array.
+  * String#b returns a copy of the String with the encoding set to binary, the byte array is unchanged.
+  * String#encode returns a copy of the String, with the byte array translated from the source
+    string's encoding to the target encoding. It also sets the encoding value of the new String.
+  * String#valid_encoding? tests for byte sequences which are invalid in the String's encoding.
+  * Regexp literals have flags to set encodings. No flag will use the source file's encoding,
+    u=UTF-8, e=EUC-JP, s=Windows-31J, n=ASCII-8BIT. Note that if your regex only contains ASCII,
+    Regexp#encoding will return US-ASCII, regardeless of the flag.
+
+
+
+  ### Recognizing and Solving Problems
+
+  #### Your text contains ? or � as characters
+
+  Example 1: "My sister lives in Z?rich"
+  Example 2: "My sister lives in Z�rich"
+
+  ##### Analysis
+
+  This symptom indicates that your string's encoding is set to UTF-8 (or another unicode variant),
+  but your input is not actually encoded in UTF-8. The ? and � are replacement characters for
+  invalid byte sequences.
+  If you are unlucky, the data is already like this in your source, meaning that whoever provides the
+  data already made a mistake.
+
+  Example to reproduce:
+
+      string = "My sister lives in Z\xFCrich" # this is probably something like File.read instead
+      puts string # prints Z?rich for me
+      puts string.scrub # prints Z�rich for me
+
+  ##### Solution
+
+  If the data is like this in the source, then there is nothing you can do. The information is already
+  lost.  
+  If it happens on your end, you can set the encoding of your String via force_encoding to a likely
+  input encoding, then use encode to translate it to UTF-8:
+
+      string = "My sister lives in Z\xFCrich" # this is probably something like File.read instead
+      string = string.force_encoding("windows-1252").encode("utf-8")
+
+  You can loop through encoding candidates to discover the real input encoding quicker.
+  Once you found the correct encoding, make sure you set the external_encoding where you are reading
+  the string:
+
+      string = File.read(path, encoding: "windows-1252")
+
+  #### Your text mostly looks correct, but has some words with odd characters
+
+  Example: "My sister lives in ZÃ¼rich"
+
+  ##### Analysis
+
+  This is a double translation error. The example is a string which is already encoded as UTF-8, but
+  was read as Windows-1252, and then translated to UTF-8.
+
+  Example to reproduce:
+
+      string = "My sister lives in Z\u00fcrich" # valid UTF-8
+      string = string.force_encoding("windows-1252").encode("UTF-8")
+      puts string # prints ZÃ¼rich for me
+
+
+  ##### Solution
+
+  Don't translate the input to UTF-8, instead set the encoding correctly so Ruby knows it is already
+  UTF-8.
+
+  Example:
+
+      string = "My sister lives in Z\u00fcrich"
+      string.force_encoding("UTF-8")
+      puts string
+
+  Note: avoid force_encoding. Set the encoding properly where you receive the data. For example, if
+  this is received via File.read, the above example would read:
+
+      string = File.read(path, encoding: "UTF-8")
+      puts string
+
+
+  #### You get an exception like ArgumentError: invalid byte sequence in UTF-8
+
+  Example situation:
+
+      string = "In Z\xFCrich lives my sister" # a Windows-1252 encoded string
+      string.force_encoding("UTF-8") # but ruby is told that it was a UTF-8 encoded string
+      string.gsub(/sister/, "brother") # this now raises the exception
+
+  ##### Analysis
+
+  You have a String which has its encoding set to UTF-8, but which contains byte sequences which are
+  invalid in UTF-8. Most common reason is that you read data from a source which is not UTF-8
+  encoded, but treat it as UTF-8.
+
+  ##### Solution
+
+  Set the encoding of your String via force_encoding to a likely input encoding, then use encode to
+  translate it to UTF-8:
+
+      string = "My sister lives in Z\xFCrich" # this is probably something like File.read instead
+      string = string.force_encoding("windows-1252").encode("utf-8")
+
+  You can loop through encoding candidates to discover the real input encoding quicker.
+  Once you found the correct encoding, make sure you set the external_encoding where you are reading
+  the string:
+
+      string = File.read(path, encoding: "windows-1252")
+
+  #### You get an exception like Encoding::CompatibilityError: incompatible encoding regexp match
+
+  Example:
+
+      "\xFC".force_encoding("windows-1252") =~ /ä/
+
+  ##### Analysis
+
+  You are trying to match a String with a Regexp which differ in encoding (Regexp have an encoding
+  too - it's either US-ASCII, ASCII-8BIT, UTF-8, EUC-JP or Windows-31J).
+
+  ##### Solution
+
+  Translate the String to a compatible encoding.
+
+      "\xFC".force_encoding("windows-1252").encode("UTF-8") =~ /ä/
+
+
+  ### Gems
+
+  The following is a list of gems which might help you with encodings. Note: this is not a
+  recommendation. I haven't used those gems myself.
+
+  * [rchardet](https://rubygems.org/gems/rchardet) - Detect the character encoding of a string
+  * [coder](https://rubygems.org/gems/coder) - remove invalid byte sequences from strings
+  * [scrub_rb](https://rubygems.org/gems/scrub_rb) - a backport of ruby 2.1's String#scrub
