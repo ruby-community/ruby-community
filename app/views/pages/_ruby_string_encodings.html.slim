@@ -4,40 +4,98 @@ markdown:
   Ruby and String encodings
   =========================
 
+
+
   ### Note
 
-  Unless stated otherwise, this article covers Ruby version 2.1 and up.
+  Unless stated otherwise, this article covers Ruby version 2.1 and up.  
+  Other languages than ruby will use different implementations. But the basic
+  All code examples assume your terminal is set to output UTF-8.  
+  concepts are the same.
+
+
 
   ### Terminology
 
-  This may be a bit dry, but it's quite important to understand the terms used. I will go into details
-  about those terms later. So if you don't understand right away what it means - don't worry and just
-  read on.
+  This may be a bit dry, but it's quite important to understand the terms used. I will go into
+  details about those terms later. So if you don't understand right away what it means - don't worry
+  and just read on.
 
   #### Bit
 
-  A bit is the basic unit of information in computing and digital communications.
-  A bit can have only one of two values. These values are most commonly
-  represented as either a 0 or 1. The term bit is a portmanteau of binary digit.
+  A [bit](http://en.wikipedia.org/wiki/Bit) is the basic unit of information in computing and
+  digital communications. A bit can have only one of two values. These two values are most commonly
+  represented as 0 and 1. The term bit is a [portmanteau](http://en.wikipedia.org/wiki/Portmanteau)
+  of "binary digit".
 
   #### Byte
 
-  A byte most commonly consists of eight bits. It is the smallest addressable unit
-  of memory in many computer architectures. Most sizes in computers are measured
-  in bytes, or multiples of bytes. For example, your computer might have 8 GiB
-  (gibibytes) of RAM. That means it has 8 * 1024 * 1024 * 1024 = 8,589,934,592
-  Bytes of Memory.
-  Since a byte consist of 8 bits, it can represent up to 256 different values
-  (2^8).
+  A [byte](http://en.wikipedia.org/wiki/Byte) will in about any architecture use consist of eight
+  bits. It is the smallest addressable unit of memory in many computer architectures. Most sizes in
+  computers are measured in bytes, or multiples of bytes. For example, your computer might have 8
+  GiB (gibibytes) of RAM. That means it has 8 * 1024 * 1024 * 1024 = 8,589,934,592 Bytes of Memory.
+  Since a byte consist of 8 bits, it can represent up to 256 different values (2 to the power of 8
+  values, also written as 2^8).
 
   #### Character
 
-  The term "character" is often shortened to just "char". A character is what
-  humans use to read & write text. For example, "A" is a character from the latin
-  script. "π" (pi) is a character from the greek script.
+  The term "character" is often shortened to just "char". A character is what humans use to read &
+  write text. For example, "A" is a character from the latin script. "π" (pi) is a character from
+  the greek script, while "Я" (ya) is from the cyrillic script.
+
+  #### String
+
+  In Ruby, a string is a set of two informations: the encoding of the string, and an array of bytes.
 
 
-  ### Encoding
+  ### Single Byte Encodings
+
+  As you now know, a byte can only represent 256 different values. Yet, the unicode standard defines
+  far over 100,000 characters. This means a single byte can't be used to encode a character. This is
+  where encodings come into play. The first form of encodings were single byte encodings. This means
+  a single byte mapped a single character. But depending on the encoding, a the same byte could map
+  to a different character, or two different bytes in different encodings could map to the same
+  character. Let's examine the Windows-1252 and Mac-Roman encodings as examples of single byte
+  encodings. The bytes 0x00-0x7f (or 0-127 in decimal) are identical in those two encodings.
+  The bytes 0x80-0xff (or 128-255) are mapped differently. For example the byte 0xB0 in
+  windows-1252 is mapped to "°", in Mac-Roman it is mapped to "∞". This means if you set your
+  output device (e.g. your terminal) to Windows-1252 encoding and print the byte 0xB0, you will see
+  a "°", while if you set it to Mac-Roman, you will see a "∞". Now lets start at the other end -
+  both encodings target western countries and as such share many characters. For example the
+  character "ä" in Windows-1252 is represented by the byte 0xE4, while Mac-Roman uses 0x8A.
+
+  So the old way was to limit a piece of text to 256 possible characters, and allow more characters
+  by changing the encoding. The problem with that is that most text based file formats do not store
+  the encoding which has been used. We will get to that later.
+
+
+  ### Fixed Width Multibyte Encodings
+
+  With the rise of networking and an ever more connected world, using dozens of encodings became
+  more of a problem. One possible solution: use more than one byte to encode a character.
+  An example of such an encoding is UTF-32. The 32 here means that it uses 32 bits as basic unit.
+  A single unit can encode up to 4.3 billion characters. This is easily enough to accomodate the
+  roughly 110,000 characters currently specified in unicode.  
+  Lets take a look at how UTF-32 encodes characters using the examples from before. Since it uses
+  4 bytes, the single byte 0xB0 is not valid. If we pad it to 4 bytes, we get 0x000000B0. When we
+  take a look what character this encodes in UTF-32BE, we see that it is "°" again. If we go the
+  other way and check how "ä" is encoded, we see that is encoded as 0x000000E4.  
+  You may have noticed that I said "in UTF-32BE", not just "UTF-32". Now where does that "BE" come
+  from and what does it mean? If we look at 4 bytes a time as a character, then another part starts
+  to matter - our CPU architecture. There are two mainly used architectures: Big-Endian and Little-
+  Endian. The two differ in the order of bytes which make up an integer. That is, a big-endian
+  machine will …TODO: IMPROVE…
+
+
+
+
+  ### Translating Encodings
+
+
+
+
+
+  ----------
 
   An encoding informs the computer and/or its programs, how bytes are mapped to
   characters, and the other way round. For example, the ASCII encoding defines
