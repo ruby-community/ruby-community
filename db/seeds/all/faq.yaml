@@ -22,9 +22,6 @@ Generic:
       on it, it is actively developed and available in the repositories of every major
       distribution. No, Ruby will not go away anytime soon.
 
-  - - 'What''s the difference between this channel and #ruby-lang?'
-    - "#ruby is larger than #ruby-lang, #ruby-lang is officially linked to by ruby-lang.org"
-
   - - In Rails, how can I …?
     - "#ruby is targeted at general Ruby discussion. If your question targets Ruby on
       Rails framework, please ask in #RubyOnRails (Channel requires registration to
