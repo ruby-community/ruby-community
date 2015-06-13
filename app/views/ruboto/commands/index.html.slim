@@ -1,0 +1,38 @@
+- breadcrumb "Commands" => ruboto_commands_path
+
+h1.page-title List of ruboto's commands
+
+h2 Public Commands
+
+h6 >> ruby_code
+p Executes the given code and prints either the result or the first line of the output
+
+h6 LANG>> code
+p
+  | Executes the code using the specified language. E.g. <code>18>> RUBY_VERSION</code> will run the 
+  | code using ruby 1.8
+
+h6 ?fact [target]
+p
+  | Responds with the fact. Take a look at <a href="#{ruboto_facts_path}">the list of facts</a>.
+  br
+  | If target is provided, ruboto will address that user with the fact.
+
+h6 !ops [all]
+p
+  | Lists active ops.
+  br
+  | With the <code>all</code> parameter, it will list all ops, not just active ones.
+
+h2 Commands restricted to operators
+h6 !ban NICK [channel] (!P | !T DURATION) REASON"|"SECRET_REASON (see AKICK syntax)
+h6 !fact (add |mk) LABEL TEXT
+h6 !fact (remove | rm) LABEL
+h6 !fact (edit | ed) LABEL TEXT
+h6 !fact LABEL
+h6 !kick NICK [REASON]
+h6 !mute NICK [REASON]
+
+-# \
+ # * Channel logging \
+ # * pastebin detection

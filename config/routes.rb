@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   namespace :ruboto do
     resources :facts
+    resources :commands
   end
 end
