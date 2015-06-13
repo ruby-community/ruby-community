@@ -1,0 +1,16 @@
+- breadcrumb "Facts" => facts_path
+
+h1.page-title Facts for ruboto's "?<fact>" command
+
+table.table.table-striped
+  thead
+    tr
+      th Name
+      th Uses
+      th Text
+  tbody
+    - @facts.each do |fact|
+      tr
+        td= fact.name
+        td= fact.usage_count
+        td= fact.text
