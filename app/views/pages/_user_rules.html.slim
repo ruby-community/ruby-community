@@ -1,78 +1,119 @@
 - breadcrumb "IRC Rules" => page_path("user_rules")
 
-markdown:
-  Channel Rules
-  =============
-
-  ### 1. What you can expect from the channel
-
-  1. We are a polite and inclusive channel. Everybody is welcome.
-  1. We will try to help you with your question.
-  1. Note that helping you with your problem, does not mean we will solve it for you.  
-     We will try to help you overcome misunderstandings, pick the best from a selection of
-     solutions, improve your code, look at the right place in the documentation.
-  1. We won't provide help for code you can't disclose, or private help in a query. That's
-     consulting. If you need that, hire and pay a consultant.
-  1. If you run into troubles with another channel guest, our
-     [operators](#{page_path("irc_staff".freeze)}) (short: ops) will help to resolve the issue.
-  1. If you caused trouble and consequently got removed from the channel, you will get informed
-     about the reason and duration of the ban.
+h1
+  | Channel Rules
 
 
-  ### 2. What the channel expects from you
-
-  1. Be polite, considerate and inclusive. Treat others with respect.
-  1. Before you ask a question, make sure you did your due diligence.  
-     You can find method documentation at [ruby-doc.org](http://ruby-doc.org).  
-     You can test code snippets using the command line tool irb (or [pry](http://pryrepl.org/)).  
-     We trust you know how to use google. If you googled and didn't find anything, tell us which
-     terms you googled.
-  1. When you ask a question, make it evident that you put in some effort of your own prior to
-     asking. This goes a long way to get good will and through that, better help.
-  1. When you ask a question about a bug you experience, make sure you put the following information
-      on [gist](https://gist.github.com): your code, your input, the output you expect, the output
-      you actually get. If you get an exception, also put up the full backtrace.
-  1. When you ask a question about how to do X, tell us why you want to do X. Also show (via
-     [gist](https://gist.github.com)) us your current approach.
-  1. After asking your question, be patient. It may take a while for somebody to pick it up. If you
-     don't get an answer for a long time, consider whether you provided all information necessary to
-     help you.
-  1. Do not hightlight specific users you're not having a discussion with without prior consent.
-     Any active user who has the ability and is willing to help with your question will do so
-     without your highlight.
-  1. If you post the question in other places, inform the channel up front about that. Say clearly
-     in which other places you are also looking for help.
-  1. You can always send a private message regarding operative topics to an
-     [operator](#{page_path("irc_staff".freeze, anchor: "operators".freeze)}), in all other cases it
-     is advisable to ask the person for permission before sending a private message.
-  1. If you behave rudely, or otherwise disturb the channel, an operator may kick you as a warning,
-     or even ban you from the channel.  
-     Offensive behavior include but are not limited to (in no particular order):
-    * Name-calling
-    * Ad-hominem attacks
-    * Sexually or racially charged slurring
-    * Spamming (that includes abusing the channel bot's eval function)
-    * Derogatory comments
-    * Trolling
-    * Excessive off-topic talk while Ruby related topics are discussed
-  1. If you're offended by somebody's behavior, remain civil. Tell them what and why you did not
-     like about their behavior.
-  1. If you can't resolve your problem with another channel member, either add that person to your
-     irc client's ignore, or ask for help. But under no circumstances become rude or offensive.
+h3
+  | 1. What you can expect from the channel
+ol.rules
+  li#rule_1_1
+    | We are a polite and inclusive channel. Everybody is welcome.
+  li#rule_1_2
+    | We will try to help you with your question.
+  li#rule_1_3
+    | Note that helping you with your problem, does not mean we will solve it for you.
+    br
+    | We will try to help you overcome misunderstandings, pick the best from a selection of 
+    | solutions, improve your code, look at the right place in the documentation.
+  li#rule_1_3
+    | We won't provide help for code you can't disclose, or private help in a query. That's 
+    | consulting. If you need that, hire and pay a consultant.
+  li#rule_1_4
+    | If you run into troubles with another channel guest, our <a href="/pages/irc_staff">operators</a> 
+    | (short: ops) will help to resolve the issue.
+  li#rule_1_5
+    | If you caused trouble and consequently got removed from the channel, you will get informed
+    | about the reason and duration of the ban.
 
 
-  ### 3. What to do when you get kicked or banned
+h3
+  | 2. What the channel expects from you
+ol.rules
+  li#rule_2_1
+    | Be polite, considerate and inclusive. Treat others with respect.
+  li#rule_2_2
+    | Before you ask a question, make sure you did your due diligence.
+    br
+    | You can find method documentation at <a href="http://ruby-doc.org">ruby-doc.org</a>.
+    br
+    | You can test code snippets using the command line tool irb (or 
+    | <a href="http://pryrepl.org/">pry</a>).
+    br
+    | We trust you know how to use google. If you googled and didn't find anything, tell us which 
+    | terms you googled.
+  li#rule_2_3
+    | When you ask a question, make it evident that you put in some effort of your own prior to 
+    | asking. This goes a long way to get good will and through that, better help.
+  li#rule_2_4
+    | When you ask a question about a bug you experience, make sure you put the following 
+    | information on <a href="https://gist.github.com">gist</a>: your code, your input, the output 
+    | you expect, the output you actually get. If you get an exception, also put up the full backtrace.
+  li#rule_2_5
+    | When you ask a question about how to do X, tell us why you want to do X. Also show us (via 
+    | <a href="https://gist.github.com">gist</a>) your current approach.
+  li#rule_2_6
+    | After asking your question, be patient. It may take a while for somebody to pick it up. If you 
+    | don't get an answer for a long time, consider whether you provided all information necessary 
+    | to help you.
+  li#rule_2_7
+    | Do not hightlight specific users you're not having a discussion with without prior consent. 
+    | Any active user who has the ability and is willing to help with your question will do so 
+    | without your highlight.
+  li#rule_2_8
+    | If you post the question in other places, inform the channel up front about that. Say clearly 
+    | in which other places you are also looking for help.
+  li#rule_2_9
+    | You can always send a private message regarding operative topics to an 
+    | <a href="/pages/irc_staff#operators">operator</a>, in all other cases it is advisable to ask 
+    | the person for permission before sending a private message.
+  li#rule_2_10
+    | If you behave rudely, or otherwise disturb the channel, an operator may kick you as a warning, 
+    | or even ban you from the channel.
+    br
+    | Offensive behavior include but are not limited to (in no particular order):
+    ul
+      li
+        | Name-calling
+      li
+        | Ad-hominem attacks
+      li
+        | Sexually or racially charged slurring
+      li
+        | Using a sexually or racially charged nickname
+      li
+        | Spamming (that includes abusing the channel bot's eval function)
+      li
+        | Derogatory comments
+      li
+        | Trolling
+      li
+        | Excessive off-topic talk while Ruby related topics are discussed
+  li#rule_2_11
+    | If you're offended by somebody's behavior, remain civil. Tell them what and why you did not 
+    | like about their behavior.
+  li#rule_2_12
+    | If you can't resolve your problem with another channel member, either add that person to your 
+    | irc client's ignore, or ask for help. But under no circumstances become rude or offensive.
 
-  1. If you get kicked but not banned, then you can join again immediately. Consider it as a
-     warning.  
-     Sadly experience shows that most people don't take an operator's warning serious unless the
-     warning gets additional weight through a kick.
-  1. Arguments in the channel about whether being kicked was appropriate are not welcome. If you
-     want to discuss the circumstances of a kick or a ban, talk to the
-     [operator](#{page_path("irc_staff".freeze)}) in their query. If you are not satisfied by the
-     result, contact another [operator](#{page_path("irc_staff".freeze)}).  
-     Be aware that your exchange with the operator is logged and your behavior towards the operator
-     is also considered when evaluating any inquiries from your part.
-  1. If you get banned, you are also informed about the duration of the ban.
 
-  Revision: 3 (2015-03-27)
+h3
+  | 3. What to do when you get kicked or banned
+ol.rules
+  li#rule_3_1
+    | If you get kicked but not banned, then you can join again immediately. 
+    | Consider it as a warning.
+    br
+    | Sadly experience shows that most people don't take an operator's warning serious unless the 
+    | warning gets additional weight through a kick.
+  li#rule_3_2
+    | Arguments in the channel about whether being kicked was appropriate are not welcome. If you 
+    | want to discuss the circumstances of a kick or a ban, talk to an 
+    | <a href="/pages/irc_staff">operator</a> in #ruby-banned.
+    br
+    | Be aware that your exchange with the operator is logged and your behavior towards the 
+    | operator is also considered when evaluating any inquiries from your part.
+  li#rule_3_3
+    | If you get banned, you are also informed about the duration of the ban.
+p
+  | Revision: 4 (2015-06-13)

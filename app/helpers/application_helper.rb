@@ -17,7 +17,7 @@ private
     @_page_body_id ||= begin
       id = "page_#{controller.controller_path}__#{rendered_action}".tr('/','_')
   
-      id == "page_pages_show" ? "#{id}__#{params[:id]}" : id
+      id == "page_pages__show" ? "#{id}__#{params[:id]}" : id
     end
   end
 
