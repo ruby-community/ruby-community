@@ -16,6 +16,7 @@ README
   * `cp config/secrets.example.yml config/secrets.yml`
 * Database creation: `rake db:migrate`
 * Database initialization: `rake db:seed`
+* Some data resides in db/data. You can load it using `psql -f`. Take a look at db/data/README.markdown.
 * How to run the test suite: no test suite so far
 
 Take also a look at the "Contribute" section below.
