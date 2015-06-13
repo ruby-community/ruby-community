@@ -1,0 +1,74 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = public, pg_catalog;
+
+--
+-- Data for Name: facts; Type: TABLE DATA; Schema: public; Owner: ruboto
+--
+
+COPY facts (id, name, text, added_by_mask, added_by_account, updated_at) FROM stdin;
+2	ruboto	I'm the channel bot, linker of the rules, adept of the facts, wielder of the banhammer.	apeiros!~apeiros@apeiros.me	apeiros	2015-04-04 07:59:55.972978-04
+3	botsnack	nomnomnomnom	jhass!~jhass@aeshna.de	jhass	2015-04-04 08:07:22.646992-04
+4	owner	My owner is apeiros, I have many rulers though	jhass!~jhass@aeshna.de	jhass	2015-04-04 08:09:38.769867-04
+5	gist	https://gist.github.com - Multiple files, syntax highlighting, even automatically with matching filenames, can be edited	jhass!~jhass@aeshna.de	jhass	2015-04-04 10:31:20.529945-04
+8	chef	Please join #chef for help with your cookbooks.	jhass!~jhass@aeshna.de	jhass	2015-04-04 10:43:59.55269-04
+9	puppet	Please join #puppet for help with it.	jhass!~jhass@aeshna.de	jhass	2015-04-04 11:35:56.539976-04
+13	code	We can't help you without your code, please post it to https://gist.github.com	jhass!~jhass@aeshna.de	jhass	2015-04-05 09:16:04.864873-04
+14	try	Why don't you try it and see for yourself?	jhass!~jhass@aeshna.de	jhass	2015-04-06 08:37:54.072026-04
+16	context	Please add more context to your question, what are you doing, why are you doing it, which libraries are involved. Post some code to gist if it clarifies your question.	jhass!~jhass@aeshna.de	jhass	2015-04-07 13:23:32.880454-04
+12	cloud	There's no cloud, only other people's computers.	jhass!~jhass@aeshna.de	jhass	2015-04-07 17:41:20.145834-04
+10	whatschat	WhatsChat is a crappy app that abuses IRC for something it is not: a dating chat. Please remove this app.	jhass!~jhass@aeshna.de	jhass	2015-04-07 18:02:38.49596-04
+17	gist_usage	To properly use gist, please enable syntax highlighting, either by choosing the language manually or by entering a proper filename. If you post multiple things, separate them into multiple files. If you have a Github account, please update your gist with new information instead of posting a new one.	jhass!~jhass@aeshna.de	jhass	2015-04-07 18:54:44.647359-04
+18	ask	Don't ask to ask. Just ask your question, and if anybody can help, they will likely try to do so.	jhass!~jhass@aeshna.de	jhass	2015-04-08 17:03:37.559473-04
+19	goal	Describe your goal, not the solution you imagine.	jhass!~jhass@aeshna.de	jhass	2015-04-09 13:22:58.323813-04
+20	best	"Best" and "better" are subjective. Try to use a different term.	jhass!~jhass@aeshna.de	jhass	2015-04-09 17:35:39.370191-04
+21	rimshot	Badum-Tshh! https://www.youtube.com/watch?v=oShTJ90fC34	jhass!~jhass@aeshna.de	jhass	2015-04-14 17:45:15.050094-04
+22	rules	Please respect the channel rules: http://ruby-community.com/pages/user_rules	jhass!~jhass@aeshna.de	jhass	2015-04-16 15:40:16.261563-04
+32	ops	To call for ops use the !ops command.	jhass!~jhass@aeshna.de	jhass	2015-05-12 07:51:14.591467-04
+23	flood	Please use https://gist.github.com for more than three lines of text!	jhass!~jhass@aeshna.de	jhass	2015-04-17 08:10:48.950499-04
+24	abi	Each Ruby release has actually two versions, the interpreter version and the ABI version. The interpreter version is what commonly is referred to, like 2.1.5. The ABI version is for the binary interface used by compiled extensions and it is what you see in your paths. It's shared among one release series, for example for the Ruby versions 2.1.0 to 2.1.5 the ABI version is 2.1.0.	jhass!~jhass@aeshna.de	jhass	2015-04-17 18:01:44.544701-04
+25	pry	Pry, the better IRB. Includes easy object inspection via `ls`, `history`, docs view with `?`, source view with `$` and syntax highlighting, among other features (see `help` for more). It can also be used for easy debugging by putting ’binding.pry’ directy in your source code. Visit https://pryrepl.org/ or get it now with gem install pry pry-doc	jhass!~jhass@aeshna.de	jhass	2015-04-19 16:00:54.961893-04
+11	crosspost	Please do not crosspost without at least telling so and mentioning provided suggestions and their outcome in all channels. Experience shows that people don't do either, and not doing so is considered rude.	jhass!~jhass@aeshna.de	jhass	2015-04-20 18:11:36.333722-04
+40	ror	Please join #RubyOnRails for Rails questions. You need to be identified with NickServ, see /msg NickServ HELP	ljarvis!~lee@jarvo.io	ljarvis	2015-06-01 17:10:14.856334-04
+26	ping	pong	jhass!~jhass@aeshna.de	jhass	2015-04-22 11:23:56.324821-04
+27	use	Don't ask "does anyone use <thing>?". It's better to just state your problem and if anyone has used <thing> they will most likely answer.	jhass!~jhass@aeshna.de	jhass	2015-04-28 13:30:21.021698-04
+28	quickref	http://www.zenspider.com/Languages/Ruby/QuickRef.html	jhass!~jhass@aeshna.de	jhass	2015-05-01 10:13:31.27139-04
+29	links	http://ruby-community.com/pages/links	jhass!~jhass@aeshna.de	jhass	2015-05-01 18:14:13.533831-04
+30	answers	How to ask the right questions to get you the right answer: https://www.mikeash.com/getting_answers.html	jhass!~jhass@aeshna.de	jhass	2015-05-08 12:20:33.201021-04
+31	root	General advise in system administration: do not and that means never use sudo or root to "fix" things. Only use it if you exactly know why it would work and why it wouldn't work under any circumstances as normal user. Or if you're told to do it.	jhass!~jhass@aeshna.de	jhass	2015-05-08 16:10:17.415265-04
+33	op	To call for ops use the !ops command.	jhass!~jhass@aeshna.de	jhass	2015-05-12 07:51:21.620419-04
+34	fake	Please show your real code to illustrate your problem. Using fake code often hides it or won't bring up the best possible solution.	jhass!~jhass@aeshna.de	jhass	2015-05-12 10:29:54.903336-04
+35	learning	How learning something works: http://i.imgur.com/l2mInq8.webm	jhass!~jhass@aeshna.de	jhass	2015-05-23 11:06:12.008442-04
+7	rails	Please join #RubyOnRails for Rails questions. You need to be identified with NickServ, see /msg NickServ HELP	jhass!~jhass@aeshna.de	jhass	2015-05-23 11:47:23.358302-04
+36	used	Don't ask "does anyone use <thing>?". It's better to just state your problem and if anyone has used <thing> they will most likely answer.	Radar!~Radar@162.243.140.224	Radar	2015-05-25 00:06:08.896268-04
+38	experiment	Please use your local irb or pry (see ?pry) to experiment, ruboto's eval functionality is for demonstration purposes only.	jhass!~jhass@aeshna.de	jhass	2015-05-28 11:40:10.375348-04
+37	help	Public commands are !ops and ?<fact> (see https://gist.github.com/apeiros/5668fd04029f2d30799f ). Ops check the topic in #ruby-ops please.	apeiros!~apeiros@apeiros.me	apeiros	2015-05-29 16:57:52.00831-04
+41	ugt	it's morning, see http://www.total-knowledge.com/~ilya/mips/ugt.html	jhass!~jhass@aeshna.de	jhass	2015-06-02 12:21:29.765603-04
+42	better	"Best" and "better" are subjective. Try to use a different term.	apeiros!~apeiros@apeiros.me	apeiros	2015-06-02 18:11:58.1477-04
+6	anyone	Just ask your question, if anyone has or can, they will respond.	jhass!~jhass@aeshna.de	jhass	2015-06-02 19:52:05.563757-04
+43	gem_names	http://guides.rubygems.org/name-your-gem/	jhass!~jhass@aeshna.de	jhass	2015-06-03 06:00:28.157723-04
+39	xy	it seems like you are asking for a specific solution to a problem, instead of asking about your problem. This often leads to bad solutions and increases frustration for you and those trying to help you. More: http://meta.stackexchange.com/a/66378	jhass!~jhass@aeshna.de	jhass	2015-06-03 08:42:22.813044-04
+44	ot	this seems to be off-topic. Please move your discussion to #ruby-offtopic, to keep this channel free for Ruby related problems. Thanks!	jhass!~jhass@aeshna.de	jhass	2015-06-12 13:41:12.095658-04
+\.
+
+
+--
+-- Name: facts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ruboto
+--
+
+SELECT pg_catalog.setval('facts_id_seq', 44, true);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
