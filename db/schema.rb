@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329111019) do
+ActiveRecord::Schema.define(version: 20150613135356) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "facts", force: :cascade do |t|
+    t.integer  "target_fact_id"
+    t.text     "name"
+    t.text     "text"
+    t.integer  "usage_count",                  default: 0
+    t.string   "added_by_mask",    limit: 32
+    t.string   "added_by_account", limit: 255
+    t.datetime "updated_at"
+  end
 
   create_table "frequently_asked_questions", force: :cascade do |t|
     t.string   "topic"
@@ -22,6 +35,39 @@ ActiveRecord::Schema.define(version: 20150329111019) do
     t.datetime "updated_at"
   end
 
-  add_index "frequently_asked_questions", ["topic"], name: "index_frequently_asked_questions_on_topic"
+  add_index "frequently_asked_questions", ["topic"], name: "index_frequently_asked_questions_on_topic", using: :btree
 
+  create_table "messages", force: :cascade do |t|
+    t.integer  "dialog_id",    limit: 8
+    t.datetime "time",                     null: false
+    t.integer  "source",       limit: 2,   null: false
+    t.binary   "raw",                      null: false
+    t.text     "sanitized"
+    t.text     "html"
+    t.jsonb    "json"
+    t.string   "command",      limit: 32
+    t.text     "body"
+    t.string   "channel",      limit: 32
+    t.string   "from_nick",    limit: 32
+    t.string   "from_account", limit: 32
+    t.string   "from_mask",    limit: 255
+    t.string   "to_nick",      limit: 32
+    t.string   "to_account",   limit: 32
+    t.string   "to_mask",      limit: 255
+    t.string   "nicks",                                 array: true
+    t.string   "accounts",                              array: true
+  end
+
+  create_table "paste_service_offenders", force: :cascade do |t|
+    t.string   "nick",         limit: 32
+    t.string   "mask",         limit: 32
+    t.string   "account",      limit: 255
+    t.text     "service"
+    t.datetime "last_used_at"
+  end
+
+  create_table "ruboto_tables", force: :cascade do |t|
+  end
+
+  add_foreign_key "facts", "facts", column: "target_fact_id", name: "facts_target_fact_id_fkey", on_delete: :cascade
 end
