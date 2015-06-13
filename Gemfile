@@ -9,7 +9,7 @@ gem "bootstrap-sass"
 gem "uglifier", ">= 1.3.0"
 gem "bcrypt", "~> 3.1.7"
 gem "markdown"
-gem "sqlite3" # TODO: replace with pg
+gem "pg"
 
 # For iDea theme
 gem "font-awesome-rails"
