@@ -10,7 +10,7 @@ README
 ### Setup
 
 * Ruby version: 2.2.2
-* System dependencies: PostGreSQL v. 9.4+
+* System dependencies: PostgreSQL v. 9.4+
 * Configuration:
   * `cp config/database.example.yml config/database.yml`
   * `cp config/secrets.example.yml config/secrets.yml`
