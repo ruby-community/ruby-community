@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613135356) do
+ActiveRecord::Schema.define(version: 20151125160221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,14 @@ ActiveRecord::Schema.define(version: 20150613135356) do
 
   create_table "ruboto_tables", force: :cascade do |t|
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "github",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "users", ["github"], name: "index_users_on_github", unique: true, using: :btree
 
   add_foreign_key "facts", "facts", column: "target_fact_id", name: "facts_target_fact_id_fkey", on_delete: :cascade
 end

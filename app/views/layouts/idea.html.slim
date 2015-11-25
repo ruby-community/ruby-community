@@ -142,7 +142,7 @@ html lang="en"
       .page-intro style=("margin-top: 0px;")
         .container
           .row
-            .col-md-12
+            .col-md-10
               ol.breadcrumb
                 - if content_for? :breadcrumb
                   li
@@ -153,7 +153,12 @@ html lang="en"
                   li
                     i.fa.fa-home.pr-10
                     a href="/" Home
-
+            .col-md-2.text-right.small
+              - if user_signed_in?
+                .user
+                  = current_user.github
+                  '  &#x2022;
+                  = link_to 'Log out', destroy_user_session_path, method: :delete
 
       .page-top
         .container

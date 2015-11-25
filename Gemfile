@@ -16,6 +16,10 @@ gem "font-awesome-rails"
 
 gem "redcarpet"
 
+# For authentication
+gem "devise", "~> 3.5"
+gem "omniauth-github", "~> 1.1"
+
 group :development, :test do
   # gem "byebug"
   gem "quiet_assets"
