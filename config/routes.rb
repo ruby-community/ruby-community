@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resource  :welcomes
   resources :pages
+  resources :private_pages
   resource  :faq
 
   namespace :ruboto do

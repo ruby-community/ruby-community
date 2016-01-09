@@ -134,6 +134,14 @@ html lang="en"
                               li= link_to "Contribute",      page_path("contribute")
                               li= link_to "Code of Conduct", page_path("code_of_conduct")
                               li= link_to "Contributors",    page_path("contributors")
+                          - if user_signed_in?
+                            li.dropdown
+                              a.dropdown-toggle data-toggle="dropdown" href="#"  Private Section
+                              ul.dropdown-menu
+                                li= link_to "Demo",      private_page_path("demo")
+                          - else
+                            li
+                              a href="#{user_omniauth_authorize_path('github')}"  Login
                   /! navbar end
                 /! main-navigation end
               /! header-right end
@@ -163,6 +171,8 @@ html lang="en"
       .page-top
         .container
           .row
+            - flash.each do |type, message|
+              .alert(class="#{bootstrap_alert_class(type)}")= message
             = yield
       /! footer start (Add "light" class to #footer in order to enable light footer)
       /! ================
