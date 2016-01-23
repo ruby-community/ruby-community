@@ -10,6 +10,8 @@ gem "uglifier", ">= 1.3.0"
 gem "bcrypt", "~> 3.1.7"
 gem "markdown"
 gem "pg"
+gem "pry-rails"
+gem "pry-doc"
 
 # For iDea theme
 gem "font-awesome-rails"
