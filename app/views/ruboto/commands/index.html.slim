@@ -25,13 +25,52 @@ p
   | With the <code>all</code> parameter, it will list all ops, not just active ones.
 
 h2 Commands restricted to operators
-h6 !ban NICK [channel] (!P | !T DURATION) REASON"|"SECRET_REASON (see AKICK syntax)
-h6 !fact (add |mk) LABEL TEXT
-h6 !fact (remove | rm) LABEL
-h6 !fact (edit | ed) LABEL TEXT
-h6 !fact LABEL
-h6 !kick NICK [REASON]
-h6 !mute NICK [REASON]
+
+table.top-aligned
+  tbody
+    tr
+      th qkick
+      td '!qkick nick [channel] [reason]'<br>kicks a user
+    tr
+      th kick
+      td '!kick nick [channel] [duration] [reason][ "|" secret_reason]'<br>kicks the user and bans them for 1min in order for them to take notice of the kick
+    tr
+      th mute
+      td '!mute nick [channel] [duration] [reason][ "|" secret_reason]'<br>mutes the user
+    tr
+      th ban
+      td '!ban nick [channel] [duration] [reason][ "|" secret_reason]'<br>bans the user
+    tr
+      th connection
+      td '!connection nick [channel]'<br>kicks the user, bans them for 3 days and redirects to #ruby-fix-your-connection
+    tr
+      th fixcon
+      td   same as !connection.
+    tr
+      th spam
+      td '!spam nick [channel]'<br>kicks and bans for a day
+    tr
+      th rude
+      td '!rude nick [channel]'<br>kicks and bans for an hour
+    tr
+      th badnick
+      td '!badnick nick [channel]'<br>kicks and bans nick-only permanently (note: this one seems to be buggy atm and not work as advertized)
+    tr
+      th troll
+      td '!troll nick [channel]'<br>kicks and bans for a week
+    tr
+      th flood
+      td '!flood nick [channel]'<br>only kicks
+    tr
+      th add a factoid
+      td !fact (add |mk) LABEL TEXT
+    tr
+      th delete a factoid
+      td !fact (remove | rm) LABEL
+    tr
+      th edit a factoid
+      td !fact (edit | ed) LABEL TEXT
+
 
 -# \
  # * Channel logging \

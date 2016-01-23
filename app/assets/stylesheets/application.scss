@@ -33,4 +33,12 @@ img.fork-me {
   padding: 8px 0;
 }
 
-@import "pages.sass"
+table.top-aligned,
+tbody.top-aligned,
+thead.top-aligned {
+  td,th {
+    vertical-align: top
+  }
+}
+
+@import "pages.sass";
