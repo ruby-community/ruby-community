@@ -31,6 +31,8 @@
 
 h1.page-title IRC Logs
 
+p At this moment, our logs are only rudimentary. Check <a href="http://irclog.whitequark.org/ruby">irclog.whitequark.org</a> for more complete logs.
+
 .well
   span(style="margin-right: 0.8em;")
     | Channel: <select name="channel"><option selected>#ruby</option><option>#ruby-offtopic</option><option>#ruby-community</option></select>
@@ -40,6 +42,6 @@ h1.page-title IRC Logs
     | Date: <select name="date"></select>
 
 table#irc_log
-  thead
-    th(colspan=3)= "Topic: …loading…"
+  - # thead TODO, add topic
+  - #   th(colspan=3)= "Topic: …loading…"
   tbody
