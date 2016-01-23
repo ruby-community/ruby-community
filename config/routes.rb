@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resource  :welcomes
   resources :pages
   resource  :faq
+  resources :logs
 
   namespace :ruboto do
     resources :facts

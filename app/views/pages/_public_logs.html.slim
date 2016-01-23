@@ -1,0 +1,45 @@
+- content_for :javascript do
+  = javascript_include_tag "logs"
+  javascript:
+    log    = new Logs('#ruby', '#irc_log')
+    log.load()
+
+    function startOfDay(date) {
+      return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()))
+    }
+    function minusOneDay(date) {
+      return startOfDay(new Date(date.valueOf() - 20000))
+    }
+
+    $(function() {
+      $('select[name=channel]').on('change', function() { log.changeChannel($(this).val()); log.load() })
+      $('select[name=jpqMode]').on('change', function() { log.changeJpqMode($(this).val()); log.render() })
+      $('select[name=date]').on('change', function() { log.changeDate(new Date(parseInt($(this).val()))); log.load() })
+
+      var d1, d2
+      d1 = startOfDay(new Date())
+      $('select[name=date]').append($('<option value="'+d1.valueOf()+'" selected>Today</option>'))
+      d1 = minusOneDay(d1)
+      $('select[name=date]').append($('<option value="'+d1.valueOf()+'">Yesterday</option>'))
+      for(var i=0; i<5; i++) {
+        d1 = minusOneDay(d1)
+        $('select[name=date]').append($('<option value="'+d1.valueOf()+'">'+iso8601UtcDate(d1)+'</option>'))
+      }
+    })
+
+- breadcrumb "Logs" => page_path("public_logs")
+
+h1.page-title IRC Logs
+
+.well
+  span(style="margin-right: 0.8em;")
+    | Channel: <select name="channel"><option selected>#ruby</option><option>#ruby-offtopic</option><option>#ruby-community</option></select>
+  span(style="margin-right: 0.8em;")
+    | Join/Part: <select name="jpqMode"><option>show</option><option selected>hide</option><option>smart</option></select>
+  span(style="margin-right: 0.8em;")
+    | Date: <select name="date"></select>
+
+table#irc_log
+  thead
+    th(colspan=3)= "Topic: …loading…"
+  tbody
