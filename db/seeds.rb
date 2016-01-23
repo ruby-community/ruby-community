@@ -14,3 +14,28 @@ YAML.load_file('db/seeds/all/faq.yaml').each do |topic, faqs|
     FrequentlyAskedQuestion.create! topic: topic, position: position, question: question, answer: answer
   end
 end
+
+time = Time.zone.local(2016,1,1)
+%w[
+  apeiros
+  drbrain
+  radar
+  zzak
+  adaedra
+  aredridel
+  banister
+  baweaver
+  CoralineAda
+  havenwood
+  jhass
+  leejarvis
+  miah/
+  Mon-Ouie
+  djberg96
+  seanstickle
+  slyphon
+  workmad3
+  zenspider
+].each.with_index(1) do |user, idx|
+  User.create!(id: idx, github: user, created_at: time, updated_at: time)
+end
