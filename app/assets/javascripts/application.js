@@ -52,3 +52,17 @@ $(function() {
     $("a.anchor[href='"+hash+"']").click();
   }
 });
+
+function lpad(string, length, pattern) {
+  if (typeof(string) !== "string") string = string.toString()
+  if (string.length >= length) return string
+
+  if (pattern === undefined) pattern = " "
+  while(string.length < length) {
+    string = pattern + string
+  }
+  return (string.length > length) ? substr(string, string.length-length) : string
+}
+function iso8601UtcDate(date) {
+  return date.getUTCFullYear()+"-"+lpad(date.getUTCMonth()+1, 2, "0")+"-"+lpad(date.getUTCDate(), 2, "0")
+}

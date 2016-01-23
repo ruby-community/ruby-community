@@ -1,0 +1,1 @@
+* Non-english speakers -> join #ruby.TLD/#ruby-TLD (list of language specific channels on ruby-community.org)

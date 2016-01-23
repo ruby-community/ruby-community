@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :pages
   resources :private_pages
   resource  :faq
+  resources :logs
 
   namespace :ruboto do
     resources :facts
