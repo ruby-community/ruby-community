@@ -105,21 +105,31 @@ p.updateData = function Logs_updateData(data) {
   if (this.domReady) this.render()
 }
 p.render = function Logs_render() {
-  console.log("jpqMode: "+this.jpqMode)
   var $tbody = $(this.tableSelector).find('tbody').eq(0)
-  Logs.DEBUG = $tbody
   $tbody.empty()
   for(var i=0; i<this.messages.length; i++) {
     message = this.messages[i]
     switch(message.command) {
       case "PRIVMSG":
-        $tbody.append($(
-          '<tr>'+
-            '<td title="'+message.formattedUtcDate()+'">'+message.formattedTime()+'</td>'+
-            '<td style="color: '+message.fromHslColor()+';" title="'+message.fromFullIdentifier()+'">'+message.fromNick+'</td>'+
-            '<td>'+escapeHtml(message.body)+'</td>'+
-          '</tr>'
-        ))
+        var text = message.body
+        if (text.substr(0,7) == "\x01ACTION") {
+          var chop = text.charCodeAt(text.length-1) == 1
+          $tbody.append($(
+            '<tr>'+
+              '<td title="'+message.formattedUtcDate()+'">'+message.formattedTime()+'</td>'+
+              '<td style="color: '+message.fromHslColor()+';" title="'+message.fromFullIdentifier()+'">* '+message.fromNick+'</td>'+
+              '<td>'+escapeHtml(text.substr(8,text.length-(chop ? 9 : 8)))+'</td>'+
+            '</tr>'
+          ))
+        } else {
+          $tbody.append($(
+            '<tr>'+
+              '<td title="'+message.formattedUtcDate()+'">'+message.formattedTime()+'</td>'+
+              '<td style="color: '+message.fromHslColor()+';" title="'+message.fromFullIdentifier()+'">'+message.fromNick+'</td>'+
+              '<td>'+escapeHtml(message.body)+'</td>'+
+            '</tr>'
+          ))
+        }
         break
       case "JOIN":
         if (this.jpqMode == 'show') {
