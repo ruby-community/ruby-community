@@ -3,6 +3,7 @@ module ApplicationHelper
     "create".freeze => "new".freeze,
     "update".freeze => "edit".freeze,
   }
+  Pages = %w[page_pages__show page_private_pages__show]
 
 private
 
@@ -17,7 +18,7 @@ private
     @_page_body_id ||= begin
       id = "page_#{controller.controller_path}__#{rendered_action}".tr('/','_')
   
-      id == "page_pages__show" ? "#{id}__#{params[:id]}" : id
+      Pages.include?(id) ? "#{id}__#{params[:id]}" : id
     end
   end
 
@@ -31,6 +32,3 @@ private
     nil
   end
 end
-
-__END__
-li.active Frequently Asked Questions

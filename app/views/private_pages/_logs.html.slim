@@ -1,7 +1,7 @@
 - content_for :javascript do
   = javascript_include_tag "logs"
   javascript:
-    log    = new Logs('public', '#{LogsController::DefaultChannel}', '#irc_log')
+    log    = new Logs('private', '#{PrivateLogsController::DefaultChannel}', '#irc_log')
     log.load()
 
     function startOfDay(date) {
@@ -36,8 +36,8 @@ p At this moment, our logs are only rudimentary. Check <a href="http://irclog.wh
 .well
   span(style="margin-right: 0.8em;")
     | Channel: <select name="channel">
-    - LogsController::AllowedChannels.each do |channel|
-      option(selected=(channel == LogsController::DefaultChannel))= channel
+    - PrivateLogsController::AllowedChannels.each do |channel|
+      option(selected=(channel == PrivateLogsController::DefaultChannel))= channel
     | </select>
   span(style="margin-right: 0.8em;")
     | Join/Part: <select name="jpqMode"><option>show</option><option selected>hide</option><option>smart</option></select>

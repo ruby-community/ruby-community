@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :private_pages
   resource  :faq
   resources :logs
+  resources :private_logs
 
   namespace :ruboto do
     resources :facts

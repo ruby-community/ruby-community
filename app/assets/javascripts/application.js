@@ -16,6 +16,21 @@
 //= require_tree ./application
 //= require_tree ./idea
 
+var entityMap = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': '&quot;',
+  "'": '&#39;',
+  "/": '&#x2F;'
+}
+
+function escapeHtml(string) {
+  return String(string).replace(/[&<>"'\/]/g, function (s) {
+    return entityMap[s];
+  })
+}
+
 $(function() {
   // With slight modifications from http://stackoverflow.com/a/12714767/2199687
   var hashTagActive = "";

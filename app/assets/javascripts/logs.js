@@ -1,5 +1,6 @@
-function Logs(channel, tableSelector) {
+function Logs(visibility, channel, tableSelector) {
   var self           = this
+  this.visibility    = visibility
   this.tableSelector = tableSelector
   this.channel       = channel
   this.fromDate      = null
@@ -93,7 +94,7 @@ p.domIsReady = function Logs_domIsReady() {
 p.load = function Logs_load() {
   var self, url
   self = this
-  url  = '/logs?channel='+escape(this.channel)
+  url  = (this.visibility == 'public' ? '/logs?channel=' : '/private_logs?channel=')+escape(this.channel)
   if (this.fromDate) url += '&from='+iso8601UtcDate(this.fromDate)
   if (this.toDate) url += '&to='+iso8601UtcDate(this.toDate)
 
@@ -116,7 +117,7 @@ p.render = function Logs_render() {
           '<tr>'+
             '<td title="'+message.formattedUtcDate()+'">'+message.formattedTime()+'</td>'+
             '<td style="color: '+message.fromHslColor()+';" title="'+message.fromFullIdentifier()+'">'+message.fromNick+'</td>'+
-            '<td>'+message.body+'</td>'+
+            '<td>'+escapeHtml(message.body)+'</td>'+
           '</tr>'
         ))
         break

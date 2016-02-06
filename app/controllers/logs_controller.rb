@@ -6,8 +6,7 @@ class LogsController < ApplicationController
   helper :log
 
   DefaultChannel  = "#ruby".freeze
-  PublicChannels  = %w[#ruby #ruby-community #ruby-offtopic].to_set
-  PrivateChannels = (%w[#ruby-ops #ruby-banned]+PublicChannels.to_a).to_set
+  AllowedChannels = %w[#ruby #ruby-community #ruby-offtopic].to_set
   Attributes      = %w[topic].to_set
 
   def index
@@ -41,8 +40,8 @@ class LogsController < ApplicationController
 
 private
   def channel_param
-    channel = params[:channel].presence || DefaultChannel
-    raise "Illegal channel: #{channel}" unless PublicChannels.include?(channel)
+    channel = params[:channel].presence || self.class::DefaultChannel
+    raise "Illegal channel: #{channel}" unless self.class::AllowedChannels.include?(channel)
 
     channel
   end
