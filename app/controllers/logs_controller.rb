@@ -8,6 +8,7 @@ class LogsController < ApplicationController
   DefaultChannel  = "#ruby".freeze
   AllowedChannels = %w[#ruby #ruby-community #ruby-offtopic].to_set
   Attributes      = %w[topic].to_set
+  Commands        = %w[PRIVMSG JOIN PART QUIT KILL NICK AWAY ACCOUNT]
 
   def index
     channel = channel_param
@@ -15,10 +16,10 @@ class LogsController < ApplicationController
     respond_to do |format|
       format.json do
         json_data = Message.where(
-          command: ["PRIVMSG".freeze, "JOIN".freeze, "PART".freeze, "QUIT".freeze, "NICK".freeze],
-          channel: channel,
+          source:  2,
+          command: Commands,
           time:    from_param..to_param
-        ).for_json.order(:time).last(2500).map { |message|
+        ).where("channel IS NULL OR channel = ?", channel).for_json.order(:time).last(2500).map { |message|
           message.as_json
         }
 
