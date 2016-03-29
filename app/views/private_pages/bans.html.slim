@@ -1,0 +1,81 @@
+h1 Bans in #{@channel}
+p
+  ' You can click on a row to show more details. All times are in UTC.
+
+div.list-group
+  - @bans.each do |group_id, bans|
+    - bans.first.tap do |head|
+      a.list-group-item href="#ban-#{group_id}" data-toggle="collapse"
+        .row
+          .col-md-1.text-center
+            .small= group_id
+            div
+              span class="label label-#{PrivatePagesController::BAN_STATUS_STYLE[ban_group_status(bans)]}"
+                = ban_group_status(bans).to_s.humanize
+          .col-md-4
+            .text-muted.small = head.target_account? ? 'Account' : 'Mask'
+            span.label.label-default
+              i class="fa fa-#{bans.first.ban_mode == 'q' ? 'microphone-slash' : 'legal'}" title=(bans.first.ban_mode == 'q' ? 'Mute' : 'Ban') data-toggle="tooltip" data-placement="left"
+            ' &nbsp;
+            = head.target_account || head.target_mask
+          .col-md-7
+            .text-muted.small Reason
+            - if head.public_reason?
+              = head.public_reason
+            - else
+              .text-muted None
+
+        .collapse id="ban-#{group_id}"
+          .row style="margin-top: 10px;"
+            .col-md-1
+              / Placeholder
+            .col-md-4
+              .small.text-muted Operator
+              div
+                - if head.banned_by_account?
+                  = head.banned_by_account
+                - elsif head.banned_by_mask.start_with? 'ChanServ!'
+                  em Set through ChanServ or AKICK
+                - elsif head.banned_by_mask.include? '!'
+                  - head.banned_by_mask.partition('!').tap do |nick, _, host|
+                    = nick
+                    ' &nbsp;
+                    span.text-muted.small= host
+                - else
+                  em Found in a netsplit
+            .col-md-2
+              .small.text-muted Banned at
+              = l head.banned_at, format: :short
+            .col-md-2
+              - if head.banned_by_command?
+                .text-muted.small Command
+                - if head.banned_by_command == 'manually'
+                  i.fa.fa-hand-stop-o
+                  ' Manually
+                - else
+                  ' !#{head.banned_by_command}
+            .col-md-1
+              .small.text-muted Duration
+              - if head.human_duration == 'an indefinite duration'
+                ' ∞
+              - else
+                = head.human_duration
+            .col-md-2
+              .text-muted.small Expiration
+              - if head.expires_at?
+                - if head.expires_at.past?
+                  span.text-warning title=l(head.expires_at) data-toggle="tooltip" Expired
+                - else
+                  = l head.expires_at, format: :short
+              - else
+                .text-danger Never
+          br/
+          .row
+            .col-md-1
+              / Placeholder
+            .col-md-11
+              .well.well-sm
+                = render partial: 'private_pages/ban', collection: bans, as: :ban
+- content_for :javascript do
+  javascript:
+    $('[data-toggle="tooltip"]').tooltip();

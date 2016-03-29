@@ -139,7 +139,8 @@ html lang="en"
                             li.dropdown
                               a.dropdown-toggle data-toggle="dropdown" href="#"  Private Section
                               ul.dropdown-menu
-                                li= link_to "Logs",      private_page_path("logs")
+                                li= link_to "Logs", private_page_path("logs")
+                                li= link_to "Bans", bans_path  
                   /! navbar end
                 /! main-navigation end
               /! header-right end
@@ -209,3 +210,6 @@ html lang="en"
 
       ga('create', 'UA-61310963-1', 'auto');
       ga('send', 'pageview');
+
+    - if content_for? :javascript
+      = yield :javascript
