@@ -1,0 +1,26 @@
+.row
+  .col-md-2.text-center
+    span class="text-#{PrivatePagesController::BAN_STATUS_ICONS[ban.status.to_sym][0]}"
+      i class="fa fa-#{PrivatePagesController::BAN_STATUS_ICONS[ban.status.to_sym][1]}"
+    .small
+      = ban.status.humanize
+  .col-md-6
+    - if ban.target_account? && !ban.target_mask.present?
+      .text-muted.small Account
+      = ban.target_account
+    - else
+      .text-muted.small Mask
+      = ban.target_mask
+  .col-md-2
+    - if ban.redirect_to?
+      .text-muted.small Redirect to
+      = ban.redirect_to
+  .col-md-2
+    - if ban.unbanned_at?
+      .text-muted.small Unbanned at
+      = l ban.unbanned_at, format: :short
+    - elsif ban.expires_at?
+      .text-muted.small Expiration
+      = l ban.expires_at, format: :short
+
+.ban-entry-divider

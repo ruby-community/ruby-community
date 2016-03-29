@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resource  :faq
   resources :logs
   resources :private_logs
+  get 'bans', to: 'private_pages#bans'
+  get 'bans/:channel', to: 'private_pages#channel_bans', as: :channel_bans
 
   namespace :ruboto do
     resources :facts
