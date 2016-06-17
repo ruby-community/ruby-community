@@ -7,10 +7,31 @@ h2 Public Commands
 h6 >> ruby_code
 p Executes the given code and prints either the result or the first line of the output
 
-h6 LANG>> code
+h6 VER>> ruby_code
 p
-  | Executes the code using the specified language. E.g. <code>18>> RUBY_VERSION</code> will run the 
-  | code using ruby 1.8
+  | Executes the code using the specified Ruby version. E.g. <code>18>> RUBY_VERSION</code> will run the 
+  | code using Ruby 1.8.
+p
+  | Available versions, the latest available patch release available on eval.in for each will be used:
+  ul
+    li <code>23</code> - for Ruby 2.3
+    li <code>22</code> - for Ruby 2.2
+    li <code>21</code> - for Ruby 2.1
+    li <code>20</code> - for Ruby 2.0
+    li <code>19</code> - for Ruby 1.9
+    li <code>18</code> - for Ruby 1.8
+    li <code>10</code> - for Ruby 1.0
+
+h6 MODE>> ruby_code
+p
+  | Executes the code using the mode. E.g. <code>asm>> 1 + 1</code> to disassemble the given code.
+p
+  | Available modes:
+  ul
+    li <code>default</code> - Runs the given Ruby code normally with the default Ruby version.
+    li <code>asm</code> - Disassembles the given Ruby code into instructions for the Ruby Virtual Machine.
+    li <code>ast</code> - Returns a representation of the AST resulting from the given Ruby code.
+    li <code>tok</code> - Returns the tokens for the given Ruby code as seen by Ruby's lexer.
 
 h6 ?fact [target]
 p
