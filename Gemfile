@@ -19,6 +19,10 @@ gem "redcarpet"
 gem "devise", "~> 3.5"
 gem "omniauth-github", "~> 1.1"
 
+group :production, optional: true do
+  gem "puma"
+end
+
 group :development, :test do
   # gem "byebug"
   gem "pry-rails"

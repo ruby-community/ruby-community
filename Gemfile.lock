@@ -119,6 +119,7 @@ GEM
       yard (~> 0.8)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    puma (3.4.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -214,6 +215,7 @@ DEPENDENCIES
   pg
   pry-doc
   pry-rails
+  puma
   quiet_assets
   rails (= 4.2.5)
   redcarpet
@@ -223,4 +225,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.11.2
+   1.12.5
