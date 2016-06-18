@@ -39,7 +39,7 @@ The following should help you and us with your contribution:
 * Please follow the Code of Conduct below.
 * We are located in IRC on freenode.net in the [#ruby-community](irc://irc.freenode.net/#ruby-community) channel.
 * The core contributors are listed in this README under Contributors
-* Fork the repository on https://github.com/apeiros/ruby-community
+* Fork the repository on https://github.com/ruby-community/ruby-community
 * Provide your contributions as Pull Requests
 * Please follow the code style listed in PROJECT/development/Contribute/Code_style.markdown
 * The file suffixes are .yaml, .markdown, .html.slim
