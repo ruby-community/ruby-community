@@ -16,7 +16,7 @@ class LogsController < ApplicationController
     respond_to do |format|
       format.json do
         json_data = Message.where(
-          source:  2,
+          source:  RubyCommunity::Settings[:logs][:displayed_log_sources],
           command: Commands,
           time:    from_param..to_param
         ).where("channel IS NULL OR channel = ?", channel).for_json.order(:time).last(2500).map { |message|
