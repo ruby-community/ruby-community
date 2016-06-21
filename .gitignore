@@ -11,6 +11,9 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+
+# Ignore configuration
+/config/application.yml
 /config/database.yml
 /config/secrets.yml
 
