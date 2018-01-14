@@ -14,7 +14,8 @@ README
 * Configuration:
   * `cp config/database.example.yml config/database.yml`
   * `cp config/secrets.example.yml config/secrets.yml`
-* Database creation: `rake db:migrate`
+  * `cp config/application.example.yml config/application.yml`
+* Database creation: `rake db:create db:schema:load`
 * Database initialization: `rake db:seed`
 * Some data resides in db/data. You can load it using `psql -f`. Take a look at db/data/README.markdown.
 * How to run the test suite: no test suite so far.
@@ -25,7 +26,7 @@ If you also want to test the private section, you have to additionally do:
 * go to your github profile > applications, there click the "Developer applications" tab, then hit the "Register new application" button.
 * Fill out "Application Name", "Homepage URL", "Application Description" with whatever you want, they do not matter.
 * Fill out "Authorization callback URL" with "http://ruby-community:3000/users/auth/github/callback".
-* Update your config/secrets.yml with Client-ID (github_app) and Client Secret (github_secret) which github shows you.
+* Update your config/secrets.yml with Client-ID (github\_app) and Client Secret (github\_secret) which github shows you.
 * Restart your server and open it as "http://ruby-community:3000/" in your browser (NOT as "http://127.0.0.1:3000" or "http://localhost:3000/, the login will not work there").
 
 Take also a look at the "Contribute" section below.

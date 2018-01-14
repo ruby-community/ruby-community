@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "4.2.5"
+gem "rails", "4.2.10"
 gem "jquery-rails"
 gem "slim-rails"
 gem "sass-rails", "~> 5.0"
