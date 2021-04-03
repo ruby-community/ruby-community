@@ -16,7 +16,7 @@ gem "font-awesome-rails"
 gem "redcarpet"
 
 # For authentication
-gem "devise", "~> 3.5"
+gem "devise", "~> 4.7"
 gem "omniauth-github", "~> 1.1"
 
 group :production, optional: true do
