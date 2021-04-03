@@ -14,7 +14,8 @@ README
 * Configuration:
   * `cp config/database.example.yml config/database.yml`
   * `cp config/secrets.example.yml config/secrets.yml`
-* Database creation: `rake db:migrate`
+  * `cp config/application.example.yml config/application.yml`
+* Database creation: `rake db:create db:schema:load`
 * Database initialization: `rake db:seed`
 * Some data resides in db/data. You can load it using `psql -f`. Take a look at db/data/README.markdown.
 * How to run the test suite: no test suite so far.
@@ -25,7 +26,7 @@ If you also want to test the private section, you have to additionally do:
 * go to your github profile > applications, there click the "Developer applications" tab, then hit the "Register new application" button.
 * Fill out "Application Name", "Homepage URL", "Application Description" with whatever you want, they do not matter.
 * Fill out "Authorization callback URL" with "http://ruby-community:3000/users/auth/github/callback".
-* Update your config/secrets.yml with Client-ID (github_app) and Client Secret (github_secret) which github shows you.
+* Update your config/secrets.yml with Client-ID (github\_app) and Client Secret (github\_secret) which github shows you.
 * Restart your server and open it as "http://ruby-community:3000/" in your browser (NOT as "http://127.0.0.1:3000" or "http://localhost:3000/, the login will not work there").
 
 Take also a look at the "Contribute" section below.
@@ -53,7 +54,7 @@ contribute through reporting issues, posting feature requests, updating document
 submitting pull requests or patches, and other activities.
 
 We are committed to making participation in this project a harassment-free experience for
-everyone, regardless of the level of experience, gender, gender identity, and expression,
+everyone, regardless of level of experience, gender, gender identity and expression,
 sexual orientation, disability, personal appearance, body size, race, ethnicity, age, or religion.
 
 Examples of unacceptable behavior by participants include the use of sexual language or
@@ -65,7 +66,7 @@ commits, code, wiki edits, issues, and other contributions that are not aligned 
 Code of Conduct. Project maintainers who do not follow the Code of Conduct may be removed
 from the project team.
 
-Instances of abusive, harassing or otherwise unacceptable behavior may be reported by
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by
 opening an issue or contacting one or more of the project maintainers.
 
 This Code of Conduct is adapted from the [Contributor Covenant, version 1.0.0](http://contributor-covenant.org/version/1/0/0/)
