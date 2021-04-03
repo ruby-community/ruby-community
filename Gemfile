@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 
-gem "rails", "4.2.5"
+gem "rails", "6.1.3.1"
 gem "jquery-rails"
 gem "slim-rails"
-gem "sass-rails", "~> 5.0"
+gem "sass-rails", "~> 6.0"
 gem "bootstrap-sass"
 gem "uglifier", ">= 1.3.0"
 gem "bcrypt", "~> 3.1.7"
@@ -16,8 +16,9 @@ gem "font-awesome-rails"
 gem "redcarpet"
 
 # For authentication
-gem "devise", "~> 4.7"
-gem "omniauth-github", "~> 1.1"
+gem "devise", github: "heartcombo/devise" # master branch until Omniauth 2.0 support is released
+gem "omniauth-github", "~> 2.0"
+gem 'omniauth-rails_csrf_protection'
 
 group :production, optional: true do
   gem "puma"
@@ -27,6 +28,4 @@ group :development, :test do
   # gem "byebug"
   gem "pry-rails"
   gem "pry-doc"
-  gem "quiet_assets"
-  gem "web-console", "~> 2.0"
 end

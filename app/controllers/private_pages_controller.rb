@@ -8,7 +8,7 @@ class PrivatePagesController < ApplicationController
   end
 
   def bans
-    @channels = Ban.group(:channel).order(:channel).pluck(:channel, 'count(distinct bangroup_id)')
+    @channels = Ban.group(:channel).order(:channel).pluck(:channel, Arel.sql('count(distinct bangroup_id)'))
     render :channels
   end
 
